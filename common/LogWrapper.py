@@ -56,9 +56,9 @@ class Log():
     def get_formatter(self):
         '''格式器'''
         self.console_fmt = logging.Formatter(
-            fmt='%(asctime)s --> %(filename)s [line:%(lineno)d] --> %(levelname)s --> %(message)s')
+            fmt='%(asctime)s --> %(filename)-20s [line:%(lineno)-3d] --> %(levelname)-5s --> %(message)s')
         self.file_fmt = logging.Formatter(
-            fmt='%(asctime)s --> %(filename)-20s [line:%(lineno)d] --> %(levelname)s --> %(message)s')
+            fmt='%(asctime)s --> %(filename)-20s [line:%(lineno)-3d] --> %(levelname)-5s --> %(message)s')
         # 返回作用给控制台处理器、文件处理器使用
         return self.console_fmt, self.file_fmt
 

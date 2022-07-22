@@ -1,57 +1,39 @@
-from time import sleep
-import numpy as np
 import cv2
-from common.ExcelConf import *
-from base.SeleniumWrapper import SeleniumTools
-import random
-from common.BranchFactory import *
+import numpy as np
+
+from base.WebDriverWrapper import *
 
 
-def error_loc(sheet,values,driver,path):
-    end_index = [i.value for i in sheet[sheet.max_row]][0]
-    for i in range(int(values[0]) + 1, int(end_index) + 2):
-        failed_(sheet.cell, i, 8)
-    # randomNo = list((str(random.random())[-8:])[::-1])
-    # current_path = os.path.abspath(os.path.dirname(__file__)).split('common')[0][0:-1] + '\picture\\'
+def picture_draw(origin, path, *elements):
+    org_loc = origin.location
+    origin.screenshot(path)
 
-    # errorImg = f"./picture/{values[5]}_{''.join(randomNo)}.png"
-    # print('errorImgerrorImg:',errorImg)
-    # print(current_path+errorImg)
-    # errorImg = f"./picture/error_1.png"
-    # errorImg = f"./{''.join(randomNo)}.png"
-    # driver.screenshot_img(path)
-    row = [i.value for i in sheet[values[0]]]
-    if not driver.is_element_exist(row[2],row[3]):
-        driver.click_element(link="确定")
-    element = driver.locator_element(row[2],row[3])
-    draw(path,element)
-    hyperlink_(sheet.cell, values[0] + 1, 8, path, 'FF0000')
+    coordinates = []
+    for element in elements:
+        ele_loc = element.location
+        ele_size = element.size
+        coordinates.append((ele_loc['x'], ele_loc['y'], int(ele_size['width']), int(ele_size['height'])))
 
-
-
-
-def draw(path, *element):
     # image = cv2.imread(path)
-    image = cv2.imdecode(np.fromfile(path,dtype=np.uint8),1)
-    print(path)
-    for item in element:
-        left = item.location['x']
-        top = item.location['y']
-        right = item.location['x'] + item.size['width']
-        bottom = item.location['y'] + item.size['height']
-        print((left, top), (right, bottom))
-        cv2.rectangle(image, (left, top), (right, bottom), (0, 0, 255), 2)
+    image = cv2.imdecode(np.fromfile(path, dtype=np.uint8), 1)
 
-    # cv2.imwrite(path, image)
+    for tag in coordinates:
+        left = int(tag[0]) - int(org_loc['x'])
+        top = int(tag[1]) - int(org_loc['y'])
+        right = int(left) + int(tag[2])
+        bottom = int(top) + int(tag[3])
+        cv2.rectangle(image, (left, top), (right, bottom), (0, 0, 255), 3)
+
     cv2.imencode('.jpg', image)[1].tofile(path)
 
 
 if __name__ == '__main__':
     path = '../picture/test00000000.png'
-    driver = SeleniumTools()
+    driver = BrowserWrapper()
 
-    driver.visit_url(r'file:\\E:\UIAutomation\common\message.html')
-    ele1 = driver.locator_element('xpath', '/html/body/form/table/tbody/tr[2]/td[2]')
-    # ele2 = driver.locator_element('xpath', '/html/body/form/table/tbody/tr[3]/td[2]')
-    # driver.screenshot_img(path)
-    draw(path, ele1)
+    driver.browser_visit(r'file:\\E:\UIAutomation\common\message.html')
+    origin = driver.locator_element('xpath', '/html/body/form/table/tbody')
+    element = driver.locator_element('xpath', '/html/body/form/table/tbody/tr[2]/td[2]')
+    element1 = driver.locator_element('xpath', '/html/body/form/table/tbody/tr[5]/td[2]/font/input')
+
+    picture_draw(origin, path, element, element1)

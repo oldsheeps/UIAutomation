@@ -11,9 +11,9 @@ class ChromeOptions():
             'user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"')  # 设置请求头
 
         # 使用headless无界面模式
-        options.add_argument('--headless')
+        # options.add_argument('--headless')
         # 如果不加这个选项，无界面模式有时定位会出现问题
-        options.add_argument('--disable-gpu')
+        # options.add_argument('--disable-gpu')
 
         # 浏览器窗口大小配置
         # options.add_argument('--window-size=1920,1080') # 窗口分辨率

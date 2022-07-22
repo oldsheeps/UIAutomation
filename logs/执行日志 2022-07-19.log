@@ -1,349 +1,256 @@
-2022-07-19 08:55:08,333 --> Main.py              [line:20] --> INFO --> 运行./case/testcase.xlsx测试用例
-2022-07-19 08:55:08,364 --> ReadExcel.py         [line:20] --> INFO --> ---------------Sheet1---------------
-2022-07-19 08:55:08,364 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第1步骤：创建Chrome浏览器
-2022-07-19 08:55:09,503 --> WebDriverWrapper.py  [line:59] --> INFO --> 启动浏览器 --> Chrome
-2022-07-19 08:55:09,504 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第2步骤：访问电商系统
-2022-07-19 08:55:09,504 --> SeleniumWrapper.py   [line:62] --> INFO --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
-2022-07-19 08:55:11,463 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第3步骤：输入账号
-2022-07-19 08:55:11,468 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[name]方式定位[username]元素
-2022-07-19 08:55:12,456 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[name]方式定位[username]元素并输入[13800138006]文本
-2022-07-19 08:55:12,480 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第4步骤：输入密码
-2022-07-19 08:55:12,480 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[password]元素
-2022-07-19 08:55:13,390 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[password]元素并输入[0000]文本
-2022-07-19 08:55:13,421 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第5步骤：输入验证码
-2022-07-19 08:55:13,421 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[verify_code]元素
-2022-07-19 08:55:14,338 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[verify_code]元素并输入[0000]文本
-2022-07-19 08:55:14,363 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第6步骤：点击登录按钮
-2022-07-19 08:55:14,363 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素
-2022-07-19 08:55:15,270 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击
-2022-07-19 08:55:15,296 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第7步骤：校验登录后是否存在退出的元素
-2022-07-19 08:55:15,296 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[安全退出]元素
-2022-07-19 08:55:25,848 --> SeleniumWrapper.py   [line:71] --> ERROR --> 找不到元素，以[link text]方式定位[安全退出]元素定位失败！
-2022-07-19 08:55:35,862 --> SeleniumWrapper.py   [line:130] --> ERROR --> Traceback (most recent call last):
-  File "E:\UIAutomation\base\SeleniumWrapper.py", line 126, in assert_text
-    reality = self.locator_element(name, value).text
-  File "E:\UIAutomation\base\SeleniumWrapper.py", line 73, in locator_element
-    element = self.driver.find_element(name, value)
-  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"link text","selector":"安全退出"}
-  (Session info: chrome=99.0.4844.74)
-
-
-2022-07-19 08:55:35,909 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第8步骤：登录成功后截图
-2022-07-19 08:55:35,909 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/特斯汀电商系统登录成功1.png]
-2022-07-19 08:55:36,269 --> ReadExcel.py         [line:20] --> INFO --> ---------------Sheet3---------------
-2022-07-19 08:55:36,269 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第1步骤：打开新的标签页
-2022-07-19 08:55:36,337 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第2步骤：访问电商系统
-2022-07-19 08:55:36,337 --> SeleniumWrapper.py   [line:62] --> INFO --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
-2022-07-19 08:55:36,869 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第3步骤：输入账号
-2022-07-19 08:55:36,869 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[name]方式定位[username]元素
-2022-07-19 08:55:37,850 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[name]方式定位[username]元素并输入[13800138006]文本
-2022-07-19 08:55:37,877 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第4步骤：输入密码
-2022-07-19 08:55:37,877 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[password]元素
-2022-07-19 08:55:38,862 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[password]元素并输入[123456]文本
-2022-07-19 08:55:38,886 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第5步骤：输入验证码
-2022-07-19 08:55:38,886 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[verify_code]元素
-2022-07-19 08:55:39,835 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[verify_code]元素并输入[0000]文本
-2022-07-19 08:55:39,859 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第6步骤：点击登录按钮
-2022-07-19 08:55:39,859 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素
-2022-07-19 08:55:40,793 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击
-2022-07-19 08:55:40,818 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第7步骤：校验登录后是否存在退出的元素
-2022-07-19 08:55:40,818 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[安全退出]元素
-2022-07-19 08:55:43,688 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第8步骤：登录成功后截图
-2022-07-19 08:55:43,688 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/特斯汀电商系统登录成功3.png]
-2022-07-19 08:55:43,880 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第9步骤：强制等待2秒
-2022-07-19 08:55:45,955 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第10步骤：跳转到商城首页
-2022-07-19 08:55:45,955 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[返回商城首页]元素
-2022-07-19 08:56:18,131 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[link text]方式定位[返回商城首页]元素并点击
-2022-07-19 08:56:18,174 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第11步骤：强制等待2秒
-2022-07-19 08:56:20,239 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第12步骤：鼠标悬停到手机数码控件树上
-2022-07-19 08:56:20,239 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[手机数码]元素
-2022-07-19 08:56:21,485 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第13步骤：点击上步骤展开后菜单中的手机
-2022-07-19 08:56:21,485 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素
-2022-07-19 08:56:22,508 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素并点击
-2022-07-19 08:56:22,537 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第14步骤：跳转到新的页面
-2022-07-19 08:56:22,575 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第15步骤：点击第一个商品
-2022-07-19 08:56:22,575 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素
-2022-07-19 08:56:32,982 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素并点击
-2022-07-19 08:56:33,038 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第16步骤：强制等待2秒
-2022-07-19 08:56:35,087 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第17步骤：选择版本：全网通4G+64G
-2022-07-19 08:56:35,087 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[goods_spec_a_10]元素
-2022-07-19 08:56:36,046 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[id]方式定位[goods_spec_a_10]元素并点击
-2022-07-19 08:56:36,077 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第18步骤：选择配色：铂光色
-2022-07-19 08:56:36,077 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[goods_spec_a_12]元素
-2022-07-19 08:56:36,991 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[id]方式定位[goods_spec_a_12]元素并点击
-2022-07-19 08:56:37,015 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第19步骤：选择套餐：套餐二
-2022-07-19 08:56:37,015 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[goods_spec_a_17]元素
-2022-07-19 08:56:37,947 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[id]方式定位[goods_spec_a_17]元素并点击
-2022-07-19 08:56:37,973 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第20步骤：加入购物车
-2022-07-19 08:56:37,973 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[join_cart]元素
-2022-07-19 08:56:38,931 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[id]方式定位[join_cart]元素并点击
-2022-07-19 08:56:38,958 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第21步骤：切入弹出frame
-2022-07-19 08:56:40,610 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第22步骤：校验是否成功加入购物车
-2022-07-19 08:56:40,610 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//span[text()="添加成功"]]元素
-2022-07-19 08:56:41,571 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第23步骤：商品加入购物车成功截图
-2022-07-19 08:56:41,571 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/商品加入购物车成功.png]
-2022-07-19 08:56:41,843 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第24步骤：去购物车结算
-2022-07-19 08:56:41,843 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//a[text()="去购物车结算"]]元素
-2022-07-19 08:56:43,134 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//a[text()="去购物车结算"]]元素并点击
-2022-07-19 08:56:43,168 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第25步骤：去结算
-2022-07-19 08:56:43,168 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//a[text()="去结算"]]元素
-2022-07-19 08:56:47,332 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//a[text()="去结算"]]元素并点击
-2022-07-19 08:56:47,360 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第26步骤：下单备注留言
-2022-07-19 08:56:47,360 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//textarea[@placeholder="最多输入50个字"]]元素
-2022-07-19 08:56:48,322 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[xpath]方式定位[//textarea[@placeholder="最多输入50个字"]]元素并输入[给辉辉买个破烂手机]文本
-2022-07-19 08:56:48,347 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第27步骤：强制等待2秒
-2022-07-19 08:56:50,410 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第28步骤：向下滑动
-2022-07-19 08:56:50,456 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第29步骤：提交定单
-2022-07-19 08:56:50,456 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[/html/body/div[14]/div/button]元素
-2022-07-19 08:56:51,404 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[/html/body/div[14]/div/button]元素并点击
-2022-07-19 08:56:51,429 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第30步骤：强制等待2秒
-2022-07-19 08:56:53,477 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第31步骤：校验订单提交是否成功
-2022-07-19 08:56:53,477 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//h3[text()="订单提交成功，请您尽快付款！"]]元素
-2022-07-19 08:56:55,686 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第32步骤：订单提交成功截图
-2022-07-19 08:56:55,686 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/订单提交成功截图.png]
-2022-07-19 08:56:55,880 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第33步骤：强制等待2秒
-2022-07-19 08:56:57,919 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第34步骤：获取当前URL
-2022-07-19 08:56:57,950 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第35步骤：打开一个新的窗口
-2022-07-19 08:56:58,017 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第36步骤：获取当前URL
-2022-07-19 09:04:35,937 --> Main.py              [line:20] --> INFO --> 运行./case/testcase.xlsx测试用例
-2022-07-19 09:04:35,969 --> ReadExcel.py         [line:20] --> INFO --> ---------------Sheet1---------------
-2022-07-19 09:04:35,969 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第1步骤：创建Chrome浏览器
-2022-07-19 09:04:37,137 --> WebDriverWrapper.py  [line:59] --> INFO --> 启动浏览器 --> Chrome
-2022-07-19 09:04:37,139 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第2步骤：访问电商系统
-2022-07-19 09:04:37,139 --> SeleniumWrapper.py   [line:62] --> INFO --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
-2022-07-19 09:04:39,776 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第3步骤：输入账号
-2022-07-19 09:04:39,776 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[name]方式定位[username]元素
-2022-07-19 09:04:40,731 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[name]方式定位[username]元素并输入[13800138006]文本
-2022-07-19 09:04:40,751 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第4步骤：输入密码
-2022-07-19 09:04:40,751 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[password11111]元素
-2022-07-19 09:04:51,301 --> SeleniumWrapper.py   [line:71] --> ERROR --> 找不到元素，以[id]方式定位[password11111]元素定位失败！
-2022-07-19 09:05:01,324 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/error_输入密码_171174.png]
-2022-07-19 09:05:01,705 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[name]方式定位[username]元素
-2022-07-19 09:05:02,596 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[name]方式定位[username]元素
-2022-07-19 10:20:53,801 --> Main.py              [line:20] --> INFO --> 运行./case/testcase.xlsx测试用例
-2022-07-19 10:20:53,910 --> ReadExcel.py         [line:20] --> INFO --> ---------------Sheet1---------------
-2022-07-19 10:20:53,910 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第1步骤：创建Chrome浏览器
-2022-07-19 10:20:55,803 --> WebDriverWrapper.py  [line:59] --> INFO --> 启动浏览器 --> Chrome
-2022-07-19 10:20:55,803 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第2步骤：访问电商系统
-2022-07-19 10:20:55,803 --> SeleniumWrapper.py   [line:62] --> INFO --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
-2022-07-19 10:20:57,841 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第3步骤：输入账号
-2022-07-19 10:20:57,841 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[name]方式定位[username]元素
-2022-07-19 10:20:58,900 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[name]方式定位[username]元素并输入[13800138006]文本
-2022-07-19 10:20:58,964 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第4步骤：输入密码
-2022-07-19 10:20:58,964 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[password]元素
-2022-07-19 10:21:00,008 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[password]元素并输入[0000]文本
-2022-07-19 10:21:00,048 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第5步骤：输入验证码
-2022-07-19 10:21:00,048 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[verify_code]元素
-2022-07-19 10:21:00,971 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[verify_code]元素并输入[0000]文本
-2022-07-19 10:21:01,003 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第6步骤：点击登录按钮
-2022-07-19 10:21:01,003 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素
-2022-07-19 10:21:01,921 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击
-2022-07-19 10:21:01,961 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第7步骤：登录成功后截图
-2022-07-19 10:21:01,961 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/特斯汀电商系统登录成功1.png]
-2022-07-19 10:21:02,324 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第8步骤：校验登录后是否存在退出的元素
-2022-07-19 10:21:02,324 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[安全退出]元素
-2022-07-19 10:21:12,900 --> SeleniumWrapper.py   [line:71] --> ERROR --> 找不到元素，以[link text]方式定位[安全退出]元素定位失败！
-2022-07-19 10:21:22,902 --> SeleniumWrapper.py   [line:130] --> ERROR --> Traceback (most recent call last):
-  File "E:\UIAutomation\base\SeleniumWrapper.py", line 126, in assert_text
-    reality = self.locator_element(name, value).text
-  File "E:\UIAutomation\base\SeleniumWrapper.py", line 73, in locator_element
-    element = self.driver.find_element(name, value)
-  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"link text","selector":"安全退出"}
-  (Session info: chrome=99.0.4844.74)
-
-
-2022-07-19 10:21:22,996 --> ReadExcel.py         [line:20] --> INFO --> ---------------Sheet3---------------
-2022-07-19 10:21:22,996 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第1步骤：打开新的标签页
-2022-07-19 10:21:23,138 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第2步骤：访问电商系统
-2022-07-19 10:21:23,138 --> SeleniumWrapper.py   [line:62] --> INFO --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
-2022-07-19 10:21:23,666 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第3步骤：输入账号
-2022-07-19 10:21:23,666 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[name]方式定位[username]元素
-2022-07-19 10:21:24,714 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[name]方式定位[username]元素并输入[13800138006]文本
-2022-07-19 10:21:24,776 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第4步骤：输入密码
-2022-07-19 10:21:24,776 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[password]元素
-2022-07-19 10:21:25,856 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[password]元素并输入[123456]文本
-2022-07-19 10:21:25,928 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第5步骤：输入验证码
-2022-07-19 10:21:25,928 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[verify_code]元素
-2022-07-19 10:21:27,000 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[verify_code]元素并输入[0000]文本
-2022-07-19 10:21:27,040 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第6步骤：点击登录按钮
-2022-07-19 10:21:27,040 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素
-2022-07-19 10:21:28,044 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击
-2022-07-19 10:21:28,108 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第7步骤：登录成功后截图
-2022-07-19 10:21:28,108 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/特斯汀电商系统登录成功3.png]
-2022-07-19 10:21:30,207 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第8步骤：校验登录后是否存在退出的元素
-2022-07-19 10:21:30,222 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[安全退出]元素
-2022-07-19 10:21:31,195 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第9步骤：强制等待2秒
-2022-07-19 10:21:33,273 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第10步骤：跳转到商城首页
-2022-07-19 10:21:33,273 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[返回商城首页]元素
-2022-07-19 10:22:05,067 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[link text]方式定位[返回商城首页]元素并点击
-2022-07-19 10:22:05,146 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第11步骤：强制等待2秒
-2022-07-19 10:22:07,222 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第12步骤：鼠标悬停到手机数码控件树上
-2022-07-19 10:22:07,222 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[手机数码]元素
-2022-07-19 10:22:08,546 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第13步骤：点击上步骤展开后菜单中的手机
-2022-07-19 10:22:08,546 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素
-2022-07-19 10:22:09,642 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素并点击
-2022-07-19 10:22:09,690 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第14步骤：跳转到新的页面
-2022-07-19 10:22:09,746 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第15步骤：点击第一个商品
-2022-07-19 10:22:09,754 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素
-2022-07-19 10:22:17,873 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素并点击
-2022-07-19 10:22:17,961 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第16步骤：强制等待2秒
-2022-07-19 10:22:20,034 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第17步骤：选择版本：全网通4G+64G
-2022-07-19 10:22:20,034 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[goods_spec_a_10]元素
-2022-07-19 10:22:20,995 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[id]方式定位[goods_spec_a_10]元素并点击
-2022-07-19 10:22:21,043 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第18步骤：选择配色：铂光色
-2022-07-19 10:22:21,043 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[goods_spec_a_12]元素
-2022-07-19 10:22:22,070 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[id]方式定位[goods_spec_a_12]元素并点击
-2022-07-19 10:22:22,141 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第19步骤：选择套餐：套餐二
-2022-07-19 10:22:22,141 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[goods_spec_a_17]元素
-2022-07-19 10:22:23,200 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[id]方式定位[goods_spec_a_17]元素并点击
-2022-07-19 10:22:23,259 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第20步骤：加入购物车
-2022-07-19 10:22:23,259 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[join_cart]元素
-2022-07-19 10:22:24,226 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[id]方式定位[join_cart]元素并点击
-2022-07-19 10:22:24,290 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第21步骤：切入弹出frame
-2022-07-19 10:22:26,007 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第22步骤：校验是否成功加入购物车
-2022-07-19 10:22:26,007 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//span[text()="添加成功"]]元素
-2022-07-19 10:22:27,012 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第23步骤：商品加入购物车成功截图
-2022-07-19 10:22:27,012 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/商品加入购物车成功.png]
-2022-07-19 10:22:27,411 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第24步骤：去购物车结算
-2022-07-19 10:22:27,411 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//a[text()="去购物车结算"]]元素
-2022-07-19 10:22:28,745 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//a[text()="去购物车结算"]]元素并点击
-2022-07-19 10:22:28,825 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第25步骤：去结算
-2022-07-19 10:22:28,825 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//a[text()="去结算"]]元素
-2022-07-19 10:22:33,229 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//a[text()="去结算"]]元素并点击
-2022-07-19 10:22:33,269 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第26步骤：下单备注留言
-2022-07-19 10:22:33,269 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//textarea[@placeholder="最多输入50个字"]]元素
-2022-07-19 10:22:34,261 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[xpath]方式定位[//textarea[@placeholder="最多输入50个字"]]元素并输入[给辉辉买个破烂手机]文本
-2022-07-19 10:22:34,301 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第27步骤：强制等待2秒
-2022-07-19 10:22:36,395 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第28步骤：向下滑动
-2022-07-19 10:22:36,459 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第29步骤：提交定单
-2022-07-19 10:22:36,459 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[/html/body/div[14]/div/button]元素
-2022-07-19 10:22:37,411 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[/html/body/div[14]/div/button]元素并点击
-2022-07-19 10:22:37,443 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第30步骤：强制等待2秒
-2022-07-19 10:22:39,530 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第31步骤：校验订单提交是否成功
-2022-07-19 10:22:39,530 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//h3[text()="订单提交成功，请您尽快付款！"]]元素
-2022-07-19 10:22:41,777 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第32步骤：订单提交成功截图
-2022-07-19 10:22:41,777 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/订单提交成功截图.png]
-2022-07-19 10:22:41,998 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第33步骤：强制等待2秒
-2022-07-19 10:22:44,057 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第34步骤：获取当前URL
-2022-07-19 10:22:44,104 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第35步骤：打开一个新的窗口
-2022-07-19 10:22:44,183 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第36步骤：获取当前URL
-2022-07-19 10:26:07,579 --> Main.py              [line:20] --> INFO --> 运行./case/testcase.xlsx测试用例
-2022-07-19 10:26:07,626 --> ReadExcel.py         [line:20] --> INFO --> ---------------Sheet1---------------
-2022-07-19 10:26:07,626 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第1步骤：创建Chrome浏览器
-2022-07-19 10:26:08,870 --> WebDriverWrapper.py  [line:59] --> INFO --> 启动浏览器 --> Chrome
-2022-07-19 10:26:08,870 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第2步骤：访问电商系统
-2022-07-19 10:26:08,886 --> SeleniumWrapper.py   [line:62] --> INFO --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
-2022-07-19 10:26:11,062 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第3步骤：输入账号
-2022-07-19 10:26:11,062 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[name]方式定位[username]元素
-2022-07-19 10:26:12,024 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[name]方式定位[username]元素并输入[13800138006]文本
-2022-07-19 10:26:12,072 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第4步骤：输入密码
-2022-07-19 10:26:12,080 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[password]元素
-2022-07-19 10:26:13,061 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[password]元素并输入[0000]文本
-2022-07-19 10:26:13,109 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第5步骤：输入验证码
-2022-07-19 10:26:13,109 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[verify_code]元素
-2022-07-19 10:26:14,094 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[verify_code]元素并输入[0000]文本
-2022-07-19 10:26:14,157 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第6步骤：点击登录按钮
-2022-07-19 10:26:14,157 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素
-2022-07-19 10:26:15,159 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击
-2022-07-19 10:26:15,246 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第7步骤：登录成功后截图
-2022-07-19 10:26:15,246 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/特斯汀电商系统登录成功1.png]
-2022-07-19 10:26:15,358 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第8步骤：校验登录后是否存在退出的元素
-2022-07-19 10:26:15,358 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[安全退出]元素
-2022-07-19 10:26:25,901 --> SeleniumWrapper.py   [line:71] --> ERROR --> 找不到元素，以[link text]方式定位[安全退出]元素定位失败！
-2022-07-19 10:26:35,917 --> SeleniumWrapper.py   [line:130] --> ERROR --> Traceback (most recent call last):
-  File "E:\UIAutomation\base\SeleniumWrapper.py", line 126, in assert_text
-    reality = self.locator_element(name, value).text
-  File "E:\UIAutomation\base\SeleniumWrapper.py", line 73, in locator_element
-    element = self.driver.find_element(name, value)
-  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
-    'value': value})['value']
-  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
-    self.error_handler.check_response(response)
-  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"link text","selector":"安全退出"}
-  (Session info: headless chrome=99.0.4844.74)
-
-
-2022-07-19 10:26:35,980 --> ReadExcel.py         [line:20] --> INFO --> ---------------Sheet3---------------
-2022-07-19 10:26:35,980 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第1步骤：打开新的标签页
-2022-07-19 10:26:36,077 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第2步骤：访问电商系统
-2022-07-19 10:26:36,077 --> SeleniumWrapper.py   [line:62] --> INFO --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
-2022-07-19 10:26:36,646 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第3步骤：输入账号
-2022-07-19 10:26:36,646 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[name]方式定位[username]元素
-2022-07-19 10:26:37,591 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[name]方式定位[username]元素并输入[13800138006]文本
-2022-07-19 10:26:37,647 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第4步骤：输入密码
-2022-07-19 10:26:37,647 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[password]元素
-2022-07-19 10:26:38,628 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[password]元素并输入[123456]文本
-2022-07-19 10:26:38,676 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第5步骤：输入验证码
-2022-07-19 10:26:38,676 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[verify_code]元素
-2022-07-19 10:26:39,721 --> SeleniumWrapper.py   [line:86] --> INFO --> 以[id]方式定位[verify_code]元素并输入[0000]文本
-2022-07-19 10:26:39,792 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第6步骤：点击登录按钮
-2022-07-19 10:26:39,792 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素
-2022-07-19 10:26:40,750 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击
-2022-07-19 10:26:40,830 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第7步骤：登录成功后截图
-2022-07-19 10:26:40,830 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/特斯汀电商系统登录成功3.png]
-2022-07-19 10:26:41,035 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第8步骤：校验登录后是否存在退出的元素
-2022-07-19 10:26:41,035 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[安全退出]元素
-2022-07-19 10:26:43,981 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第9步骤：强制等待2秒
-2022-07-19 10:26:46,054 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第10步骤：跳转到商城首页
-2022-07-19 10:26:46,054 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[返回商城首页]元素
-2022-07-19 10:27:18,556 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[link text]方式定位[返回商城首页]元素并点击
-2022-07-19 10:27:18,644 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第11步骤：强制等待2秒
-2022-07-19 10:27:20,775 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第12步骤：鼠标悬停到手机数码控件树上
-2022-07-19 10:27:20,775 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[link text]方式定位[手机数码]元素
-2022-07-19 10:27:22,111 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第13步骤：点击上步骤展开后菜单中的手机
-2022-07-19 10:27:22,111 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素
-2022-07-19 10:27:23,140 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素并点击
-2022-07-19 10:27:23,196 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第14步骤：跳转到新的页面
-2022-07-19 10:27:23,611 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第15步骤：点击第一个商品
-2022-07-19 10:27:23,611 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素
-2022-07-19 10:27:30,714 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素并点击
-2022-07-19 10:27:30,770 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第16步骤：强制等待2秒
-2022-07-19 10:27:32,869 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第17步骤：选择版本：全网通4G+64G
-2022-07-19 10:27:32,869 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[goods_spec_a_10]元素
-2022-07-19 10:27:33,796 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[id]方式定位[goods_spec_a_10]元素并点击
-2022-07-19 10:27:33,837 --> ReadExcel.py         [line:24] --> INFO --> 执行用例第18步骤：选择配色：铂光色
-2022-07-19 10:27:33,838 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[goods_spec_a_12]元素
-2022-07-19 10:27:34,767 --> SeleniumWrapper.py   [line:95] --> INFO --> 以[id]方式定位[goods_spec_a_12]元素并点击
-2022-07-19 10:27:34,768 --> SeleniumWrapper.py   [line:99] --> INFO --> 截图成功存放路径：[./picture/error_选择配色：铂光色_611563.png]
-2022-07-19 10:27:34,890 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[goods_spec_a_10]元素
-2022-07-19 10:27:35,780 --> SeleniumWrapper.py   [line:68] --> INFO --> 以[id]方式定位[goods_spec_a_10]元素
-2022-07-19 10:27:36,716 --> ReadExcel.py         [line:61] --> ERROR --> Traceback (most recent call last):
-  File "E:\UIAutomation\common\ReadExcel.py", line 43, in excel_ruuner
-    actions(excel, sheet_temp, data, path, values, driver)
-  File "E:\UIAutomation\biz\PageAction.py", line 37, in actions
-    excel.save(path)
-  File "E:\ITWork\Python365\lib\site-packages\openpyxl\workbook\workbook.py", line 407, in save
-    save_workbook(self, filename)
-  File "E:\ITWork\Python365\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "E:\ITWork\Python365\lib\zipfile.py", line 1090, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: './case/testcase.xlsx'
+2022-07-19 22:32:37,314 --> Main.py              [line:20 ] --> INFO  --> 运行./case/testcase.xlsx测试用例
+2022-07-19 22:32:37,370 --> ReadExcel.py         [line:19 ] --> INFO  --> ---------------Sheet1---------------
+2022-07-19 22:32:37,370 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第1步骤：创建Chrome浏览器
+2022-07-19 22:32:38,472 --> WebDriverWrapper.py  [line:57 ] --> INFO  --> 启动浏览器 --> Chrome
+2022-07-19 22:32:38,474 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第2步骤：访问电商系统
+2022-07-19 22:32:38,474 --> SeleniumWrapper.py   [line:81 ] --> INFO  --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
+2022-07-19 22:32:42,750 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第3步骤：输入账号
+2022-07-19 22:32:42,750 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[name]方式定位[username]元素
+2022-07-19 22:32:43,744 --> SeleniumWrapper.py   [line:104] --> INFO  --> 以[name]方式定位[username]元素并输入[13800138006]文本
+2022-07-19 22:32:43,773 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第4步骤：输入密码
+2022-07-19 22:32:43,773 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[id]方式定位[password]元素
+2022-07-19 22:32:44,701 --> SeleniumWrapper.py   [line:104] --> INFO  --> 以[id]方式定位[password]元素并输入[0000]文本
+2022-07-19 22:32:44,727 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第5步骤：输入验证码
+2022-07-19 22:32:44,728 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[id]方式定位[verify_code]元素
+2022-07-19 22:32:45,617 --> SeleniumWrapper.py   [line:104] --> INFO  --> 以[id]方式定位[verify_code]元素并输入[0000]文本
+2022-07-19 22:32:45,645 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第6步骤：点击登录按钮
+2022-07-19 22:32:45,645 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素
+2022-07-19 22:32:46,545 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击
+2022-07-19 22:32:46,579 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第7步骤：登录成功后截图
+2022-07-19 22:32:46,579 --> SeleniumWrapper.py   [line:118] --> INFO  --> 截图成功存放路径：[./picture/特斯汀电商系统登录成功1.png]
+2022-07-19 22:32:46,961 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第8步骤：校验登录后是否存在退出的元素
+2022-07-19 22:32:46,961 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[link text]方式定位[安全退出]元素
+2022-07-19 22:32:57,031 --> SeleniumWrapper.py   [line:146] --> ERROR --> Traceback (most recent call last):
+  File "E:\UIAutomation\base\SeleniumWrapper.py", line 88, in locator_element
+    self.hide_wait(name, value)
+  File "E:\UIAutomation\base\SeleniumWrapper.py", line 30, in hide_wait
+    hide_wait.until(EC.visibility_of_element_located(lambda driver: driver.find_element(name, value)))
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\support\wait.py", line 71, in until
+    value = method(self._driver)
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 128, in __call__
+    return _element_if_visible(_find_element(driver, self.locator))
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 411, in _find_element
+    return driver.find_element(*by)
+TypeError: find_element() argument after * must be an iterable, not function
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "E:\UIAutomation\common\ReadExcel.py", line 58, in excel_ruuner
-    excel.save(path)
-  File "E:\ITWork\Python365\lib\site-packages\openpyxl\workbook\workbook.py", line 407, in save
-    save_workbook(self, filename)
-  File "E:\ITWork\Python365\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "E:\ITWork\Python365\lib\zipfile.py", line 1090, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: './case/testcase.xlsx'
+  File "E:\UIAutomation\base\SeleniumWrapper.py", line 142, in assert_text
+    reality = self.locator_element(name, value).text
+  File "E:\UIAutomation\base\SeleniumWrapper.py", line 92, in locator_element
+    element = self.driver.find_element(name, value)
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"link text","selector":"安全退出"}
+  (Session info: chrome=99.0.4844.74)
 
+
+2022-07-19 22:32:57,078 --> ReadExcel.py         [line:19 ] --> INFO  --> ---------------Sheet3---------------
+2022-07-19 22:32:57,078 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第1步骤：打开新的标签页
+2022-07-19 22:32:57,169 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第2步骤：访问电商系统
+2022-07-19 22:32:57,169 --> SeleniumWrapper.py   [line:81 ] --> INFO  --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
+2022-07-19 22:32:57,541 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第3步骤：输入账号
+2022-07-19 22:32:57,541 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[name]方式定位[username]元素
+2022-07-19 22:32:58,481 --> SeleniumWrapper.py   [line:104] --> INFO  --> 以[name]方式定位[username]元素并输入[13800138006]文本
+2022-07-19 22:32:58,508 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第4步骤：输入密码
+2022-07-19 22:32:58,508 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[id]方式定位[password]元素
+2022-07-19 22:32:59,405 --> SeleniumWrapper.py   [line:104] --> INFO  --> 以[id]方式定位[password]元素并输入[123456]文本
+2022-07-19 22:32:59,432 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第5步骤：输入验证码
+2022-07-19 22:32:59,432 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[id]方式定位[verify_code]元素
+2022-07-19 22:33:00,359 --> SeleniumWrapper.py   [line:104] --> INFO  --> 以[id]方式定位[verify_code]元素并输入[0000]文本
+2022-07-19 22:33:00,388 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第6步骤：点击登录按钮
+2022-07-19 22:33:00,388 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素
+2022-07-19 22:33:01,318 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击
+2022-07-19 22:33:01,347 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第7步骤：登录成功后截图
+2022-07-19 22:33:01,347 --> SeleniumWrapper.py   [line:118] --> INFO  --> 截图成功存放路径：[./picture/特斯汀电商系统登录成功3.png]
+2022-07-19 22:33:02,892 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第8步骤：校验登录后是否存在退出的元素
+2022-07-19 22:33:02,892 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[link text]方式定位[安全退出]元素
+2022-07-19 22:33:03,810 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第9步骤：强制等待2秒
+2022-07-19 22:33:05,830 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第10步骤：跳转到商城首页
+2022-07-19 22:33:05,830 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[link text]方式定位[返回商城首页]元素
+2022-07-19 22:33:37,427 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[link text]方式定位[返回商城首页]元素并点击
+2022-07-19 22:33:37,458 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第11步骤：强制等待2秒
+2022-07-19 22:33:39,512 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第12步骤：鼠标悬停到手机数码控件树上
+2022-07-19 22:33:39,512 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[link text]方式定位[手机数码]元素
+2022-07-19 22:33:40,727 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第13步骤：点击上步骤展开后菜单中的手机
+2022-07-19 22:33:40,727 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素
+2022-07-19 22:33:41,702 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素并点击
+2022-07-19 22:33:41,737 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第14步骤：跳转到新的页面
+2022-07-19 22:33:41,787 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第15步骤：点击第一个商品
+2022-07-19 22:33:41,787 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素
+2022-07-19 22:33:47,134 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素并点击
+2022-07-19 22:33:47,164 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第16步骤：强制等待2秒
+2022-07-19 22:33:49,228 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第17步骤：选择版本：全网通4G+64G
+2022-07-19 22:33:49,228 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[id]方式定位[goods_spec_a_10]元素
+2022-07-19 22:33:50,201 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[id]方式定位[goods_spec_a_10]元素并点击
+2022-07-19 22:33:50,237 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第18步骤：选择配色：铂光色
+2022-07-19 22:33:50,237 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[id]方式定位[goods_spec_a_12]元素
+2022-07-19 22:33:51,208 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[id]方式定位[goods_spec_a_12]元素并点击
+2022-07-19 22:33:51,235 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第19步骤：选择套餐：套餐二
+2022-07-19 22:33:51,235 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[id]方式定位[goods_spec_a_17]元素
+2022-07-19 22:33:52,207 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[id]方式定位[goods_spec_a_17]元素并点击
+2022-07-19 22:33:52,244 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第20步骤：加入购物车
+2022-07-19 22:33:52,245 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[id]方式定位[join_cart]元素
+2022-07-19 22:33:53,193 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[id]方式定位[join_cart]元素并点击
+2022-07-19 22:33:53,236 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第21步骤：切入弹出frame
+2022-07-19 22:33:54,418 --> SeleniumWrapper.py   [line:206] --> INFO  --> 切入[layui-layer-iframe1]Frame框架成功！
+2022-07-19 22:33:54,475 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第22步骤：校验是否成功加入购物车
+2022-07-19 22:33:54,475 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[xpath]方式定位[//span[text()="添加成功"]]元素
+2022-07-19 22:33:55,457 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第23步骤：商品加入购物车成功截图
+2022-07-19 22:33:55,457 --> SeleniumWrapper.py   [line:118] --> INFO  --> 截图成功存放路径：[./picture/商品加入购物车成功.png]
+2022-07-19 22:33:55,744 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第24步骤：去购物车结算
+2022-07-19 22:33:55,744 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[xpath]方式定位[//a[text()="去购物车结算"]]元素
+2022-07-19 22:33:56,986 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[xpath]方式定位[//a[text()="去购物车结算"]]元素并点击
+2022-07-19 22:33:57,014 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第25步骤：去结算
+2022-07-19 22:33:57,014 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[xpath]方式定位[//a[text()="去结算"]]元素
+2022-07-19 22:33:59,566 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[xpath]方式定位[//a[text()="去结算"]]元素并点击
+2022-07-19 22:33:59,607 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第26步骤：下单备注留言
+2022-07-19 22:33:59,607 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[xpath]方式定位[//textarea[@placeholder="最多输入50个字"]]元素
+2022-07-19 22:34:00,577 --> SeleniumWrapper.py   [line:104] --> INFO  --> 以[xpath]方式定位[//textarea[@placeholder="最多输入50个字"]]元素并输入[给辉辉买个破烂手机]文本
+2022-07-19 22:34:00,602 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第27步骤：强制等待2秒
+2022-07-19 22:34:02,670 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第28步骤：向下滑动
+2022-07-19 22:34:02,717 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第29步骤：提交定单
+2022-07-19 22:34:02,717 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[xpath]方式定位[/html/body/div[14]/div/button]元素
+2022-07-19 22:34:03,646 --> SeleniumWrapper.py   [line:114] --> INFO  --> 以[xpath]方式定位[/html/body/div[14]/div/button]元素并点击
+2022-07-19 22:34:03,671 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第30步骤：强制等待2秒
+2022-07-19 22:34:05,729 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第31步骤：校验订单提交是否成功
+2022-07-19 22:34:05,729 --> SeleniumWrapper.py   [line:87 ] --> INFO  --> 以[xpath]方式定位[//h3[text()="订单提交成功，请您尽快付款！"]]元素
+2022-07-19 22:34:07,477 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第32步骤：订单提交成功截图
+2022-07-19 22:34:07,477 --> SeleniumWrapper.py   [line:118] --> INFO  --> 截图成功存放路径：[./picture/订单提交成功截图.png]
+2022-07-19 22:34:07,683 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第33步骤：强制等待2秒
+2022-07-19 22:34:09,748 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第34步骤：获取当前URL
+2022-07-19 22:34:09,779 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第35步骤：打开一个新的窗口
+2022-07-19 22:34:09,850 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第36步骤：获取当前URL
+2022-07-19 22:55:18,570 --> Main.py              [line:20 ] --> INFO  --> 运行./case/testcase.xlsx测试用例
+2022-07-19 22:55:18,617 --> ReadExcel.py         [line:19 ] --> INFO  --> ---------------Sheet1---------------
+2022-07-19 22:55:18,617 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第1步骤：创建Chrome浏览器
+2022-07-19 22:55:19,802 --> WebDriverWrapper.py  [line:57 ] --> INFO  --> 启动浏览器 --> Chrome
+2022-07-19 22:55:19,803 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第2步骤：访问电商系统
+2022-07-19 22:55:19,803 --> SeleniumWrapper.py   [line:81 ] --> INFO  --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
+2022-07-19 22:55:23,636 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第3步骤：输入账号
+2022-07-19 22:55:23,636 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[name]方式定位[username]元素
+2022-07-19 22:55:24,576 --> SeleniumWrapper.py   [line:126] --> INFO  --> 以[name]方式定位[username]元素并输入[13800138006]文本
+2022-07-19 22:55:24,602 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第4步骤：输入密码
+2022-07-19 22:55:24,602 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[id]方式定位[password]元素
+2022-07-19 22:55:25,502 --> SeleniumWrapper.py   [line:126] --> INFO  --> 以[id]方式定位[password]元素并输入[0000]文本
+2022-07-19 22:55:25,538 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第5步骤：输入验证码
+2022-07-19 22:55:25,539 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[id]方式定位[verify_code]元素
+2022-07-19 22:55:26,430 --> SeleniumWrapper.py   [line:126] --> INFO  --> 以[id]方式定位[verify_code]元素并输入[0000]文本
+2022-07-19 22:55:26,456 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第6步骤：点击登录按钮
+2022-07-19 22:55:26,456 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素
+2022-07-19 22:55:27,363 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击
+2022-07-19 22:55:27,391 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第7步骤：登录成功后截图
+2022-07-19 22:55:27,391 --> SeleniumWrapper.py   [line:140] --> INFO  --> 截图成功存放路径：[./picture/特斯汀电商系统登录成功1.png]
+2022-07-19 22:55:27,702 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第8步骤：校验登录后是否存在退出的元素
+2022-07-19 22:55:27,702 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[link text]方式定位[安全退出]元素
+2022-07-19 22:55:37,754 --> SeleniumWrapper.py   [line:158] --> ERROR --> Traceback (most recent call last):
+  File "E:\UIAutomation\base\SeleniumWrapper.py", line 110, in locator_element
+    self.hide_wait(name, value)
+  File "E:\UIAutomation\base\SeleniumWrapper.py", line 30, in hide_wait
+    hide_wait.until(EC.visibility_of_element_located(lambda driver: driver.find_element(name, value)))
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\support\wait.py", line 71, in until
+    value = method(self._driver)
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 128, in __call__
+    return _element_if_visible(_find_element(driver, self.locator))
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 411, in _find_element
+    return driver.find_element(*by)
+TypeError: find_element() argument after * must be an iterable, not function
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\UIAutomation\base\SeleniumWrapper.py", line 154, in assert_text
+    reality = self.locator_element(name, value).text
+  File "E:\UIAutomation\base\SeleniumWrapper.py", line 114, in locator_element
+    element = self.driver.find_element(name, value)
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"link text","selector":"安全退出"}
+  (Session info: chrome=99.0.4844.74)
+
+
+2022-07-19 22:55:37,788 --> ReadExcel.py         [line:19 ] --> INFO  --> ---------------Sheet3---------------
+2022-07-19 22:55:37,788 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第1步骤：打开新的标签页
+2022-07-19 22:55:37,863 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第2步骤：访问电商系统
+2022-07-19 22:55:37,863 --> SeleniumWrapper.py   [line:81 ] --> INFO  --> 访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址
+2022-07-19 22:55:38,253 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第3步骤：输入账号
+2022-07-19 22:55:38,253 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[name]方式定位[username]元素
+2022-07-19 22:55:39,171 --> SeleniumWrapper.py   [line:126] --> INFO  --> 以[name]方式定位[username]元素并输入[13800138006]文本
+2022-07-19 22:55:39,211 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第4步骤：输入密码
+2022-07-19 22:55:39,211 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[id]方式定位[password]元素
+2022-07-19 22:55:40,180 --> SeleniumWrapper.py   [line:126] --> INFO  --> 以[id]方式定位[password]元素并输入[123456]文本
+2022-07-19 22:55:40,205 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第5步骤：输入验证码
+2022-07-19 22:55:40,205 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[id]方式定位[verify_code]元素
+2022-07-19 22:55:41,115 --> SeleniumWrapper.py   [line:126] --> INFO  --> 以[id]方式定位[verify_code]元素并输入[0000]文本
+2022-07-19 22:55:41,141 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第6步骤：点击登录按钮
+2022-07-19 22:55:41,141 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素
+2022-07-19 22:55:42,076 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击
+2022-07-19 22:55:42,104 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第7步骤：登录成功后截图
+2022-07-19 22:55:42,104 --> SeleniumWrapper.py   [line:140] --> INFO  --> 截图成功存放路径：[./picture/特斯汀电商系统登录成功3.png]
+2022-07-19 22:55:43,566 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第8步骤：校验登录后是否存在退出的元素
+2022-07-19 22:55:43,567 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[link text]方式定位[安全退出]元素
+2022-07-19 22:55:44,508 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第9步骤：强制等待2秒
+2022-07-19 22:55:46,575 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第10步骤：跳转到商城首页
+2022-07-19 22:55:46,575 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[link text]方式定位[返回商城首页]元素
+2022-07-19 22:56:18,214 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[link text]方式定位[返回商城首页]元素并点击
+2022-07-19 22:56:18,273 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第11步骤：强制等待2秒
+2022-07-19 22:56:20,310 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第12步骤：鼠标悬停到手机数码控件树上
+2022-07-19 22:56:20,326 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[link text]方式定位[手机数码]元素
+2022-07-19 22:56:21,560 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第13步骤：点击上步骤展开后菜单中的手机
+2022-07-19 22:56:21,560 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素
+2022-07-19 22:56:22,542 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素并点击
+2022-07-19 22:56:22,569 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第14步骤：跳转到新的页面
+2022-07-19 22:56:22,603 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第15步骤：点击第一个商品
+2022-07-19 22:56:22,603 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素
+2022-07-19 22:56:27,705 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素并点击
+2022-07-19 22:56:27,787 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第16步骤：强制等待2秒
+2022-07-19 22:56:29,809 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第17步骤：选择版本：全网通4G+64G
+2022-07-19 22:56:29,809 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[id]方式定位[goods_spec_a_10]元素
+2022-07-19 22:56:30,766 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[id]方式定位[goods_spec_a_10]元素并点击
+2022-07-19 22:56:30,804 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第18步骤：选择配色：铂光色
+2022-07-19 22:56:30,805 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[id]方式定位[goods_spec_a_12]元素
+2022-07-19 22:56:31,794 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[id]方式定位[goods_spec_a_12]元素并点击
+2022-07-19 22:56:31,856 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第19步骤：选择套餐：套餐二
+2022-07-19 22:56:31,856 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[id]方式定位[goods_spec_a_17]元素
+2022-07-19 22:56:32,815 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[id]方式定位[goods_spec_a_17]元素并点击
+2022-07-19 22:56:32,841 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第20步骤：加入购物车
+2022-07-19 22:56:32,841 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[id]方式定位[join_cart]元素
+2022-07-19 22:56:33,803 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[id]方式定位[join_cart]元素并点击
+2022-07-19 22:56:33,848 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第21步骤：切入弹出frame
+2022-07-19 22:56:34,944 --> SeleniumWrapper.py   [line:218] --> INFO  --> 切入[layui-layer-iframe1]Frame框架成功！
+2022-07-19 22:56:34,970 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第22步骤：校验是否成功加入购物车
+2022-07-19 22:56:34,970 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[xpath]方式定位[//span[text()="添加成功"]]元素
+2022-07-19 22:56:35,924 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第23步骤：商品加入购物车成功截图
+2022-07-19 22:56:35,924 --> SeleniumWrapper.py   [line:140] --> INFO  --> 截图成功存放路径：[./picture/商品加入购物车成功.png]
+2022-07-19 22:56:36,225 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第24步骤：去购物车结算
+2022-07-19 22:56:36,225 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[xpath]方式定位[//a[text()="去购物车结算"]]元素
+2022-07-19 22:56:37,471 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[xpath]方式定位[//a[text()="去购物车结算"]]元素并点击
+2022-07-19 22:56:37,497 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第25步骤：去结算
+2022-07-19 22:56:37,497 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[xpath]方式定位[//a[text()="去结算"]]元素
+2022-07-19 22:56:40,091 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[xpath]方式定位[//a[text()="去结算"]]元素并点击
+2022-07-19 22:56:40,123 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第26步骤：下单备注留言
+2022-07-19 22:56:40,123 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[xpath]方式定位[//textarea[@placeholder="最多输入50个字"]]元素
+2022-07-19 22:56:41,101 --> SeleniumWrapper.py   [line:126] --> INFO  --> 以[xpath]方式定位[//textarea[@placeholder="最多输入50个字"]]元素并输入[给辉辉买个破烂手机]文本
+2022-07-19 22:56:41,127 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第27步骤：强制等待2秒
+2022-07-19 22:56:43,197 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第28步骤：向下滑动
+2022-07-19 22:56:43,245 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第29步骤：提交定单
+2022-07-19 22:56:43,245 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[xpath]方式定位[/html/body/div[14]/div/button]元素
+2022-07-19 22:56:44,207 --> SeleniumWrapper.py   [line:136] --> INFO  --> 以[xpath]方式定位[/html/body/div[14]/div/button]元素并点击
+2022-07-19 22:56:44,243 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第30步骤：强制等待2秒
+2022-07-19 22:56:46,270 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第31步骤：校验订单提交是否成功
+2022-07-19 22:56:46,270 --> SeleniumWrapper.py   [line:109] --> INFO  --> 以[xpath]方式定位[//h3[text()="订单提交成功，请您尽快付款！"]]元素
+2022-07-19 22:56:48,073 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第32步骤：订单提交成功截图
+2022-07-19 22:56:48,073 --> SeleniumWrapper.py   [line:140] --> INFO  --> 截图成功存放路径：[./picture/订单提交成功截图.png]
+2022-07-19 22:56:48,282 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第33步骤：强制等待2秒
+2022-07-19 22:56:50,360 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第34步骤：获取当前URL
+2022-07-19 22:56:50,392 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第35步骤：打开一个新的窗口
+2022-07-19 22:56:50,456 --> ReadExcel.py         [line:23 ] --> INFO  --> 执行用例第36步骤：获取当前URL
