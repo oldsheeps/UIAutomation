@@ -1,0 +1,314 @@
+2022-07-24 14:57:26,298 --> Main.py              [line:24 ] --> INFO  --> 加载[E:\UIAutomation/case/testcase.xlsx]测试用例文件...
+2022-07-24 14:57:26,361 --> ReadExcel.py         [line:21 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:57:26,361 --> ReadExcel.py         [line:22 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:57:26,361 --> ReadExcel.py         [line:23 ] --> INFO  --> ----------开始执行：[testcase] --->>> [登录失败] 用例----------
+2022-07-24 14:57:26,361 --> ReadExcel.py         [line:24 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:57:26,361 --> ReadExcel.py         [line:25 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:57:26,361 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第1步骤：创建Chrome浏览器
+2022-07-24 14:57:27,645 --> WebDriverWrapper.py  [line:58 ] --> INFO  --> webdriver对象：启动浏览器[Chrome] --> 成功!
+2022-07-24 14:57:27,647 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第2步骤：访问特斯汀电商系统
+2022-07-24 14:57:27,647 --> WebDriverWrapper.py  [line:160] --> INFO  --> webdriver对象：访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址!
+2022-07-24 14:57:30,863 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第3步骤：输入账号
+2022-07-24 14:57:30,863 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[name]方式定位[username]元素!
+2022-07-24 14:57:31,825 --> WebDriverWrapper.py  [line:228] --> INFO  --> webdriver对象：以[name]方式定位[username]元素并输入[807440781@qq.com]文本!
+2022-07-24 14:57:31,864 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第4步骤：输入错误的密码
+2022-07-24 14:57:31,864 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[id]方式定位[password]元素!
+2022-07-24 14:57:32,812 --> WebDriverWrapper.py  [line:228] --> INFO  --> webdriver对象：以[id]方式定位[password]元素并输入[0000]文本!
+2022-07-24 14:57:32,862 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第5步骤：输入验证码
+2022-07-24 14:57:32,862 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[id]方式定位[verify_code]元素!
+2022-07-24 14:57:33,778 --> WebDriverWrapper.py  [line:228] --> INFO  --> webdriver对象：以[id]方式定位[verify_code]元素并输入[0000]文本!
+2022-07-24 14:57:33,830 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第6步骤：点击登录按钮
+2022-07-24 14:57:33,830 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//a[@name="sbtbutton"]]元素!
+2022-07-24 14:57:34,745 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击!
+2022-07-24 14:57:34,797 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第7步骤：强制等待2秒
+2022-07-24 14:57:36,846 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第8步骤：检查是否登录成功
+2022-07-24 14:57:36,846 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[安全退出]元素!
+2022-07-24 14:57:47,425 --> WebDriverWrapper.py  [line:196] --> INFO  --> webdriver对象：找不到元素，以[link text]方式定位[安全退出]元素定位失败!
+2022-07-24 14:57:57,456 --> WebDriverWrapper.py  [line:330] --> ERROR --> Traceback (most recent call last):
+  File "E:\UIAutomation\base\WebDriverWrapper.py", line 326, in assert_text
+    reality = self.locator_element(name, value).text
+  File "E:\UIAutomation\base\WebDriverWrapper.py", line 198, in locator_element
+    element = self.driver.find_element(name, value)
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "E:\ITWork\Python365\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"link text","selector":"安全退出"}
+  (Session info: chrome=99.0.4844.74)
+
+
+2022-07-24 14:57:57,534 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第9步骤：登录成功后截图
+2022-07-24 14:57:57,782 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\特斯汀电商系统登录失败.png]!
+2022-07-24 14:57:57,844 --> ReadExcel.py         [line:21 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:57:57,844 --> ReadExcel.py         [line:22 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:57:57,844 --> ReadExcel.py         [line:23 ] --> INFO  --> ----------开始执行：[testcase] --->>> [百度搜索] 用例----------
+2022-07-24 14:57:57,844 --> ReadExcel.py         [line:24 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:57:57,844 --> ReadExcel.py         [line:25 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:57:57,844 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第1步骤：打开新的标签页
+2022-07-24 14:57:57,951 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第2步骤：访问百度
+2022-07-24 14:57:57,951 --> WebDriverWrapper.py  [line:160] --> INFO  --> webdriver对象：访问[http://www.baidu.com/]地址!
+2022-07-24 14:58:00,984 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第3步骤：在搜索框内输入关键词
+2022-07-24 14:58:00,984 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[id]方式定位[kw]元素!
+2022-07-24 14:58:02,164 --> WebDriverWrapper.py  [line:228] --> INFO  --> webdriver对象：以[id]方式定位[kw]元素并输入[中国]文本!
+2022-07-24 14:58:02,222 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第4步骤：点击百度一下按钮
+2022-07-24 14:58:02,222 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[id]方式定位[su]元素!
+2022-07-24 14:58:03,258 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[id]方式定位[su]元素并点击!
+2022-07-24 14:58:03,328 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第5步骤：点击登录按钮
+2022-07-24 14:58:05,396 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第6步骤：检查搜索内容是否出现
+2022-07-24 14:58:05,396 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[中华人民共和国 - 百度百科]元素!
+2022-07-24 14:58:06,579 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第7步骤：搜索成功后截图
+2022-07-24 14:58:06,869 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\百度一下搜索中国.png]!
+2022-07-24 14:58:06,920 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第8步骤：获取当前URL
+2022-07-24 14:58:06,976 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第9步骤：获取当前URL
+2022-07-24 14:58:07,030 --> ReadExcel.py         [line:21 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:58:07,030 --> ReadExcel.py         [line:22 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:58:07,030 --> ReadExcel.py         [line:23 ] --> INFO  --> ----------开始执行：[testcase] --->>> [矩形标记] 用例----------
+2022-07-24 14:58:07,030 --> ReadExcel.py         [line:24 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:58:07,030 --> ReadExcel.py         [line:25 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:58:07,030 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第1步骤：打开新的标签页
+2022-07-24 14:58:07,114 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第2步骤：访问sahitest测试页
+2022-07-24 14:58:07,114 --> WebDriverWrapper.py  [line:160] --> INFO  --> webdriver对象：访问[http://sahitest.com/demo/index.htm]地址!
+2022-07-24 14:58:07,885 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第3步骤：矩形标记多个元素
+2022-07-24 14:58:07,885 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/table/tbody]元素!
+2022-07-24 14:58:08,968 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/table/tbody/tr/td[1]]元素!
+2022-07-24 14:58:09,870 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//a[text()="Prompt Page"]]元素!
+2022-07-24 14:58:10,785 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/table/tbody/tr/td[4]]元素!
+2022-07-24 14:58:11,825 --> PictureDispose.py    [line:44 ] --> INFO  --> webdriver对象：截图并矩形标记成功，存放路径：[E:\UIAutomation\picture\proce_pic\矩形标记.png]!
+2022-07-24 14:58:11,869 --> ReadExcel.py         [line:21 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:58:11,869 --> ReadExcel.py         [line:22 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:58:11,869 --> ReadExcel.py         [line:23 ] --> INFO  --> ----------开始执行：[testcase] --->>> [综合购物] 用例----------
+2022-07-24 14:58:11,869 --> ReadExcel.py         [line:24 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:58:11,869 --> ReadExcel.py         [line:25 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:58:11,869 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第1步骤：打开新的标签页
+2022-07-24 14:58:11,959 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第2步骤：访问电商系统
+2022-07-24 14:58:11,960 --> WebDriverWrapper.py  [line:160] --> INFO  --> webdriver对象：访问[http://www.testingedu.com.cn:8000/Home/User/login.html]地址!
+2022-07-24 14:58:12,439 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第3步骤：输入账号
+2022-07-24 14:58:12,439 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[name]方式定位[username]元素!
+2022-07-24 14:58:13,429 --> WebDriverWrapper.py  [line:228] --> INFO  --> webdriver对象：以[name]方式定位[username]元素并输入[807440781@qq.com]文本!
+2022-07-24 14:58:13,480 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第4步骤：输入密码
+2022-07-24 14:58:13,480 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[id]方式定位[password]元素!
+2022-07-24 14:58:14,438 --> WebDriverWrapper.py  [line:228] --> INFO  --> webdriver对象：以[id]方式定位[password]元素并输入[yk145312]文本!
+2022-07-24 14:58:14,489 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第5步骤：输入验证码
+2022-07-24 14:58:14,489 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[id]方式定位[verify_code]元素!
+2022-07-24 14:58:15,444 --> WebDriverWrapper.py  [line:228] --> INFO  --> webdriver对象：以[id]方式定位[verify_code]元素并输入[0000]文本!
+2022-07-24 14:58:15,496 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第6步骤：点击登录按钮
+2022-07-24 14:58:15,496 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//a[@name="sbtbutton"]]元素!
+2022-07-24 14:58:16,444 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[//a[@name="sbtbutton"]]元素并点击!
+2022-07-24 14:58:16,496 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第7步骤：强制等待2秒
+2022-07-24 14:58:18,577 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第8步骤：校验登录后是否存在退出的元素
+2022-07-24 14:58:18,577 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[安全退出]元素!
+2022-07-24 14:58:19,570 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第9步骤：登录成功后截图
+2022-07-24 14:58:19,725 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\特斯汀电商系统登录成功.png]!
+2022-07-24 14:58:19,772 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第10步骤：强制等待2秒
+2022-07-24 14:58:21,849 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第11步骤：跳转到商城首页
+2022-07-24 14:58:21,849 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[返回商城首页]元素!
+2022-07-24 14:58:53,526 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[link text]方式定位[返回商城首页]元素并点击!
+2022-07-24 14:58:53,580 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第12步骤：强制等待2秒
+2022-07-24 14:58:55,659 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第13步骤：鼠标悬停到手机数码控件树上
+2022-07-24 14:58:55,659 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[手机数码]元素!
+2022-07-24 14:58:56,986 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第14步骤：点击上步骤展开后菜单中的手机
+2022-07-24 14:58:56,986 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素!
+2022-07-24 14:58:57,984 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[//*[@id="cata-nav"]/div[1]/div[2]/div[1]/div[2]/dl[1]/dd/a[1]]元素并点击!
+2022-07-24 14:58:58,039 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第15步骤：跳转到新的页面
+2022-07-24 14:58:58,102 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第16步骤：点击第一个商品
+2022-07-24 14:58:58,103 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素!
+2022-07-24 14:59:03,383 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/div[4]/div/div[2]/div[2]/ul/li[1]/div/div[1]/a/img]元素并点击!
+2022-07-24 14:59:03,439 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第17步骤：强制等待2秒
+2022-07-24 14:59:05,514 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第18步骤：选择版本：全网通4G+64G
+2022-07-24 14:59:05,514 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[id]方式定位[goods_spec_a_10]元素!
+2022-07-24 14:59:06,461 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[id]方式定位[goods_spec_a_10]元素并点击!
+2022-07-24 14:59:06,532 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第19步骤：选择配色：铂光色
+2022-07-24 14:59:06,532 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[id]方式定位[goods_spec_a_12]元素!
+2022-07-24 14:59:07,485 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[id]方式定位[goods_spec_a_12]元素并点击!
+2022-07-24 14:59:07,543 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第20步骤：选择套餐：套餐二
+2022-07-24 14:59:07,543 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[id]方式定位[goods_spec_a_17]元素!
+2022-07-24 14:59:08,515 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[id]方式定位[goods_spec_a_17]元素并点击!
+2022-07-24 14:59:08,576 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第21步骤：加入购物车
+2022-07-24 14:59:08,577 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[id]方式定位[join_cart]元素!
+2022-07-24 14:59:09,528 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[id]方式定位[join_cart]元素并点击!
+2022-07-24 14:59:09,580 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第22步骤：切入弹出frame
+2022-07-24 14:59:10,727 --> WebDriverWrapper.py  [line:401] --> INFO  --> webdriver对象：切入[layui-layer-iframe1]Frame框架成功!
+2022-07-24 14:59:10,790 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第23步骤：校验是否成功加入购物车
+2022-07-24 14:59:10,790 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//span[text()="添加成功"]]元素!
+2022-07-24 14:59:11,763 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第24步骤：商品加入购物车成功截图
+2022-07-24 14:59:12,046 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\商品加入购物车成功.png]!
+2022-07-24 14:59:12,093 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第25步骤：去购物车结算
+2022-07-24 14:59:12,093 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//a[text()="去购物车结算"]]元素!
+2022-07-24 14:59:13,265 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[//a[text()="去购物车结算"]]元素并点击!
+2022-07-24 14:59:13,319 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第26步骤：去结算
+2022-07-24 14:59:13,319 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//a[text()="去结算"]]元素!
+2022-07-24 14:59:15,895 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[//a[text()="去结算"]]元素并点击!
+2022-07-24 14:59:15,957 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第27步骤：下单备注留言
+2022-07-24 14:59:15,957 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//textarea[@placeholder="最多输入50个字"]]元素!
+2022-07-24 14:59:16,982 --> WebDriverWrapper.py  [line:228] --> INFO  --> webdriver对象：以[xpath]方式定位[//textarea[@placeholder="最多输入50个字"]]元素并输入[给辉辉买个破烂手机]文本!
+2022-07-24 14:59:17,029 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第28步骤：强制等待2秒
+2022-07-24 14:59:19,104 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第29步骤：向下滑动
+2022-07-24 14:59:19,161 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第30步骤：提交定单
+2022-07-24 14:59:19,161 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/div[14]/div/button]元素!
+2022-07-24 14:59:20,118 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/div[14]/div/button]元素并点击!
+2022-07-24 14:59:20,163 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第31步骤：强制等待2秒
+2022-07-24 14:59:22,231 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第32步骤：校验订单提交是否成功
+2022-07-24 14:59:22,231 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//h3[text()="订单提交成功，请您尽快付款！"]]元素!
+2022-07-24 14:59:24,075 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第33步骤：订单提交成功截图
+2022-07-24 14:59:24,258 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\订单提交成功截图.png]!
+2022-07-24 14:59:24,321 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第34步骤：强制等待2秒
+2022-07-24 14:59:26,378 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第35步骤：获取当前URL
+2022-07-24 14:59:26,425 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第36步骤：获取当前标题
+2022-07-24 14:59:26,487 --> ReadExcel.py         [line:21 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:59:26,487 --> ReadExcel.py         [line:22 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:59:26,487 --> ReadExcel.py         [line:23 ] --> INFO  --> ----------开始执行：[testcase] --->>> [iframe] 用例----------
+2022-07-24 14:59:26,487 --> ReadExcel.py         [line:24 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:59:26,487 --> ReadExcel.py         [line:25 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:59:26,487 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第1步骤：打开新的标签页
+2022-07-24 14:59:26,579 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第2步骤：访问sahitest系统
+2022-07-24 14:59:26,580 --> WebDriverWrapper.py  [line:160] --> INFO  --> webdriver对象：访问[http://sahitest.com/demo/index.htm]地址!
+2022-07-24 14:59:26,730 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第3步骤：点击IFrames Test链接
+2022-07-24 14:59:26,730 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[IFrames Test]元素!
+2022-07-24 14:59:28,033 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[link text]方式定位[IFrames Test]元素并点击!
+2022-07-24 14:59:28,080 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第4步骤：强制等待2秒
+2022-07-24 14:59:30,152 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第5步骤：切换到iframe框架1
+2022-07-24 14:59:30,152 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/iframe]元素!
+2022-07-24 14:59:31,101 --> WebDriverWrapper.py  [line:397] --> INFO  --> webdriver对象：切入[<selenium.webdriver.remote.webelement.WebElement (session="2481b68a9000e133bc6488b8c95342c8", element="8a25bb38-c99f-4b50-a026-0eda3002e8ce")>]Frame框架成功!
+2022-07-24 14:59:31,148 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第6步骤：点击H2标题元素1
+2022-07-24 14:59:31,148 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/h2]元素!
+2022-07-24 14:59:32,139 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/h2]元素并点击!
+2022-07-24 14:59:32,178 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第7步骤：滑动滚动条至300码数
+2022-07-24 14:59:32,247 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第8步骤：点击Frames Test链接
+2022-07-24 14:59:32,247 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[Frames Test]元素!
+2022-07-24 14:59:33,462 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[link text]方式定位[Frames Test]元素并点击!
+2022-07-24 14:59:33,514 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第9步骤：校验上述动作是否完成
+2022-07-24 14:59:33,659 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\检查截图1.png]!
+2022-07-24 14:59:33,716 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第10步骤：进入top框架
+2022-07-24 14:59:43,793 --> WebDriverWrapper.py  [line:401] --> INFO  --> webdriver对象：切入[top]Frame框架成功!
+2022-07-24 14:59:43,840 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第11步骤：点击top的H2
+2022-07-24 14:59:43,840 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/h2]元素!
+2022-07-24 14:59:44,861 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/h2]元素并点击!
+2022-07-24 14:59:44,911 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第12步骤：滑动滚动条至300码数
+2022-07-24 14:59:44,995 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第13步骤：点击Frames Test链接
+2022-07-24 14:59:44,995 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[Frames Test]元素!
+2022-07-24 14:59:46,041 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[link text]方式定位[Frames Test]元素并点击!
+2022-07-24 14:59:46,097 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第14步骤：校验上述动作是否完成
+2022-07-24 14:59:46,258 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\检查截图2.png]!
+2022-07-24 14:59:46,319 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第15步骤：返回默认框架
+2022-07-24 14:59:46,372 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第16步骤：进入bom框架
+2022-07-24 14:59:46,372 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/frameset/frame[2]]元素!
+2022-07-24 14:59:47,300 --> WebDriverWrapper.py  [line:397] --> INFO  --> webdriver对象：切入[<selenium.webdriver.remote.webelement.WebElement (session="2481b68a9000e133bc6488b8c95342c8", element="764664f6-3249-4d81-9549-8c45ec8cec83")>]Frame框架成功!
+2022-07-24 14:59:47,362 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第17步骤：点击bom的H2
+2022-07-24 14:59:47,362 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/h2]元素!
+2022-07-24 14:59:48,347 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/h2]元素并点击!
+2022-07-24 14:59:48,396 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第18步骤：滑动滚动条至300码数
+2022-07-24 14:59:48,447 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第19步骤：点击Frames Test链接
+2022-07-24 14:59:48,447 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[Frames Test]元素!
+2022-07-24 14:59:49,504 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[link text]方式定位[Frames Test]元素并点击!
+2022-07-24 14:59:49,563 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第20步骤：校验上述动作是否完成
+2022-07-24 14:59:49,757 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\检查截图3.png]!
+2022-07-24 14:59:49,810 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第21步骤：返回默认框架
+2022-07-24 14:59:49,864 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第22步骤：进入bom框架
+2022-07-24 14:59:49,864 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//*[@id="another"]/iframe]元素!
+2022-07-24 14:59:50,799 --> WebDriverWrapper.py  [line:397] --> INFO  --> webdriver对象：切入[<selenium.webdriver.remote.webelement.WebElement (session="2481b68a9000e133bc6488b8c95342c8", element="79efbeb9-3b85-4aaf-8fce-1cb4fa77f3dd")>]Frame框架成功!
+2022-07-24 14:59:50,861 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第23步骤：点击bom的H2
+2022-07-24 14:59:50,861 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/h2]元素!
+2022-07-24 14:59:51,884 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/h2]元素并点击!
+2022-07-24 14:59:51,928 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第24步骤：滑动滚动条至300码数
+2022-07-24 14:59:51,996 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第25步骤：点击Frames Test链接
+2022-07-24 14:59:51,996 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[Frames Test]元素!
+2022-07-24 14:59:53,010 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[link text]方式定位[Frames Test]元素并点击!
+2022-07-24 14:59:53,062 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第26步骤：校验上述动作是否完成
+2022-07-24 14:59:53,210 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\检查截图4.png]!
+2022-07-24 14:59:53,265 --> ReadExcel.py         [line:21 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:59:53,265 --> ReadExcel.py         [line:22 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:59:53,265 --> ReadExcel.py         [line:23 ] --> INFO  --> ----------开始执行：[testcase] --->>> [Select] 用例----------
+2022-07-24 14:59:53,265 --> ReadExcel.py         [line:24 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:59:53,265 --> ReadExcel.py         [line:25 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 14:59:53,265 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第1步骤：打开新的标签页
+2022-07-24 14:59:53,353 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第2步骤：访问sahitest系统
+2022-07-24 14:59:53,353 --> WebDriverWrapper.py  [line:160] --> INFO  --> webdriver对象：访问[http://sahitest.com/demo/index.htm]地址!
+2022-07-24 14:59:53,437 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第3步骤：点击Select Test链接
+2022-07-24 14:59:53,438 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[Select Test]元素!
+2022-07-24 14:59:54,585 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[link text]方式定位[Select Test]元素并点击!
+2022-07-24 14:59:54,643 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第4步骤：强制等待2秒
+2022-07-24 14:59:56,722 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第5步骤：第一个下拉框
+2022-07-24 14:59:56,722 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//*[@id="s1Id"]]元素!
+2022-07-24 14:59:57,764 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第6步骤：强制等待0.5秒
+2022-07-24 14:59:58,360 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第7步骤：第二个下拉框
+2022-07-24 14:59:58,360 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//*[@id="s2Id"]]元素!
+2022-07-24 14:59:59,412 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第8步骤：强制等待0.5秒
+2022-07-24 14:59:59,982 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第9步骤：第三个下拉框
+2022-07-24 14:59:59,982 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//*[@id="s3Id"]]元素!
+2022-07-24 15:00:00,979 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第10步骤：强制等待0.5秒
+2022-07-24 15:00:01,559 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第11步骤：第四个下拉框1
+2022-07-24 15:00:01,559 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//select[@id="s4Id"]]元素!
+2022-07-24 15:00:02,631 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第12步骤：强制等待0.5秒
+2022-07-24 15:00:03,211 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第13步骤：第四个下拉框2
+2022-07-24 15:00:03,211 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//select[@id="s4Id"]]元素!
+2022-07-24 15:00:04,245 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第14步骤：强制等待0.5秒
+2022-07-24 15:00:04,834 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第15步骤：第四个下拉框3
+2022-07-24 15:00:04,834 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//select[@id="s4Id"]]元素!
+2022-07-24 15:00:05,815 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第16步骤：强制等待0.5秒
+2022-07-24 15:00:06,377 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第17步骤：第五个下拉框
+2022-07-24 15:00:06,377 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[//select[@id="s1"]]元素!
+2022-07-24 15:00:07,396 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第18步骤：截图存根
+2022-07-24 15:00:07,601 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\检查下拉选择截图.png]!
+2022-07-24 15:00:07,648 --> ReadExcel.py         [line:21 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 15:00:07,648 --> ReadExcel.py         [line:22 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 15:00:07,648 --> ReadExcel.py         [line:23 ] --> INFO  --> ----------开始执行：[testcase] --->>> [elements] 用例----------
+2022-07-24 15:00:07,648 --> ReadExcel.py         [line:24 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 15:00:07,648 --> ReadExcel.py         [line:25 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 15:00:07,648 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第1步骤：打开新的标签页
+2022-07-24 15:00:07,738 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第2步骤：访问sahitest系统
+2022-07-24 15:00:07,738 --> WebDriverWrapper.py  [line:160] --> INFO  --> webdriver对象：访问[http://sahitest.com/demo/index.htm]地址!
+2022-07-24 15:00:07,822 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第3步骤：点击Label Page链接
+2022-07-24 15:00:07,822 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[Label Page]元素!
+2022-07-24 15:00:08,983 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[link text]方式定位[Label Page]元素并点击!
+2022-07-24 15:00:09,046 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第4步骤：强制等待2秒
+2022-07-24 15:00:11,102 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第5步骤：第一个下拉框
+2022-07-24 15:00:11,102 --> WebDriverWrapper.py  [line:210] --> INFO  --> webdriver对象：以[xpath]方式定位[//input[@type="checkbox"]]一组元素!
+2022-07-24 15:00:11,129 --> WebDriverWrapper.py  [line:121] --> ERROR --> webdriver对象：无法执行[arguments[0].setAttribute('style',arguments[1]);]script脚本!
+2022-07-24 15:00:11,332 --> WebDriverWrapper.py  [line:121] --> ERROR --> webdriver对象：无法执行[arguments[0].setAttribute('style',arguments[1]);]script脚本!
+2022-07-24 15:00:11,535 --> WebDriverWrapper.py  [line:121] --> ERROR --> webdriver对象：无法执行[arguments[0].setAttribute('style',arguments[1]);]script脚本!
+2022-07-24 15:00:11,745 --> WebDriverWrapper.py  [line:121] --> ERROR --> webdriver对象：无法执行[arguments[0].setAttribute('style',arguments[1]);]script脚本!
+2022-07-24 15:00:12,079 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第6步骤：截图存根
+2022-07-24 15:00:12,243 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\点击一组box中的第3个.png]!
+2022-07-24 15:00:12,290 --> ReadExcel.py         [line:21 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 15:00:12,290 --> ReadExcel.py         [line:22 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 15:00:12,290 --> ReadExcel.py         [line:23 ] --> INFO  --> ----------开始执行：[testcase] --->>> [alert] 用例----------
+2022-07-24 15:00:12,290 --> ReadExcel.py         [line:24 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 15:00:12,290 --> ReadExcel.py         [line:25 ] --> INFO  --> ------------------------------------------------------------
+2022-07-24 15:00:12,290 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第1步骤：创建Chrome浏览器
+2022-07-24 15:00:12,394 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第2步骤：访问sahitest系统
+2022-07-24 15:00:12,394 --> WebDriverWrapper.py  [line:160] --> INFO  --> webdriver对象：访问[http://sahitest.com/demo/index.htm]地址!
+2022-07-24 15:00:12,481 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第3步骤：点击Alert Test链接
+2022-07-24 15:00:12,481 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[link text]方式定位[Alert Test]元素!
+2022-07-24 15:00:13,608 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[link text]方式定位[Alert Test]元素并点击!
+2022-07-24 15:00:13,663 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第4步骤：将输入框的预设值清空
+2022-07-24 15:00:13,663 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/form/input[1]]元素!
+2022-07-24 15:00:14,641 --> WebDriverWrapper.py  [line:238] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/form/input[1]]元素并清空预设值!
+2022-07-24 15:00:14,696 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第5步骤：在弹出框中输入值
+2022-07-24 15:00:14,696 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/form/input[1]]元素!
+2022-07-24 15:00:15,708 --> WebDriverWrapper.py  [line:228] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/form/input[1]]元素并输入[测试弹框1]文本!
+2022-07-24 15:00:15,747 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第6步骤：点击Click For Alert按钮
+2022-07-24 15:00:15,747 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/form/input[2]]元素!
+2022-07-24 15:00:16,691 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[xpath]方式定位[/html/body/form/input[2]]元素并点击!
+2022-07-24 15:00:16,756 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第7步骤：等待2秒
+2022-07-24 15:00:18,847 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第8步骤：检查弹出框内容
+2022-07-24 15:00:18,853 --> WebDriverWrapper.py  [line:372] --> ERROR --> Traceback (most recent call last):
+  File "E:\UIAutomation\base\WebDriverWrapper.py", line 369, in assert_alert
+    assert expect == alert_text or expect in alert_text, '断言失败'
+AssertionError: 断言失败
+
+2022-07-24 15:00:18,916 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第9步骤：检查第一个弹出框是否关闭
+2022-07-24 15:00:19,123 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\关闭第一个alert弹出框.png]!
+2022-07-24 15:00:19,179 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第10步骤：点击Click For Multiline Alert按钮
+2022-07-24 15:00:19,180 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[name]方式定位[b2]元素!
+2022-07-24 15:00:20,135 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[name]方式定位[b2]元素并点击!
+2022-07-24 15:00:20,189 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第11步骤：等待2秒
+2022-07-24 15:00:22,260 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第12步骤：检查弹出框内容
+2022-07-24 15:00:22,335 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第13步骤：点击Click For Multiline Alert按钮
+2022-07-24 15:00:22,335 --> WebDriverWrapper.py  [line:193] --> INFO  --> webdriver对象：以[name]方式定位[b3]元素!
+2022-07-24 15:00:23,305 --> WebDriverWrapper.py  [line:248] --> INFO  --> webdriver对象：以[name]方式定位[b3]元素并点击!
+2022-07-24 15:00:23,359 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第14步骤：等待2秒
+2022-07-24 15:00:25,436 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第15步骤：检查弹出框内容
+2022-07-24 15:00:25,497 --> ReadExcel.py         [line:29 ] --> INFO  --> 执行用例第16步骤：检查第三个弹出框是否关闭
+2022-07-24 15:00:25,730 --> PictureDispose.py    [line:61 ] --> INFO  --> webdriver对象：截图成功，存放路径：[E:\UIAutomation\picture\proce_pic\关闭第三个alert弹出框.png]!
