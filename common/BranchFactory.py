@@ -37,6 +37,7 @@ def value_dispatch(func):
         :param value: 所有使用装饰器实例的返回值
         :return: 将对应的返回值作用于被装饰的函数
         """
+
         def wrap(func):
             if value in registry:
                 raise ValueError(
@@ -89,12 +90,12 @@ def branch_to(some):
 
 @branch.register('关闭标签页')
 def branch_to(some):
-    return "close_current_label"
+    return "browser_label_close"
 
 
 @branch.register('关闭浏览器')
 def branch_to(some):
-    return "close_browser"
+    return "browser_quit"
 
 
 @branch.register('定位')
@@ -120,6 +121,11 @@ def branch_to(some):
 @branch.register('截图')
 def branch_to(some):
     return "screenshot_save"
+
+
+@branch.register('矩形标记')
+def branch_to(some):
+    return "screenshot_draw"
 
 
 @branch.register('获取标题')
@@ -152,6 +158,11 @@ def branch_to(some):
     return "assert_text"
 
 
+@branch.register('文本断言不存在')
+def branch_to(some):
+    return "assert_text_reverse"
+
+
 @branch.register('属性断言')
 def branch_to(some):
     return "assert_attr"
@@ -160,6 +171,11 @@ def branch_to(some):
 @branch.register('弹框断言')
 def branch_to(some):
     return "assert_alert"
+
+
+@branch.register('弹框断言不存在')
+def branch_to(some):
+    return "assert_alert_reverse"
 
 
 @branch.register('进入框架')
@@ -174,12 +190,12 @@ def branch_to(some):
 
 @branch.register('返回上层框架')
 def branch_to(some):
-    return "return_parent_frame"
+    return "switch_to_parent_frame"
 
 
 @branch.register('返回默认框架')
 def branch_to(some):
-    return "return_default_content"
+    return "switch_to_default_content"
 
 
 # 下拉框
@@ -187,9 +203,11 @@ def branch_to(some):
 def branch_to(some):
     return "select_choice"
 
+
 @branch.register('下拉选择取消')
 def branch_to(some):
     return "select_choice_quit"
+
 
 @branch.register('下拉选择取消所有')
 def branch_to(some):
@@ -208,17 +226,22 @@ def branch_to(some):
 
 @branch.register('鼠标悬停')
 def branch_to(some):
-    return "hover_element"
+    return "mouse_hover"
 
 
 @branch.register('鼠标双击')
 def branch_to(some):
-    return "double_click"
+    return "mouse_double_click"
 
 
 @branch.register('鼠标右击')
 def branch_to(some):
-    return "right_click"
+    return "mouse_right_click"
+
+
+@branch.register('鼠标拖拽')
+def branch_to(some):
+    return "mouse_drag"
 
 
 @branch.register('新建标签页')
@@ -244,7 +267,6 @@ def branch_to(some):
 @branch.register('点击一组')
 def branch_to(some):
     return "foreach_element_click"
-
 
 
 @branch.register(1)

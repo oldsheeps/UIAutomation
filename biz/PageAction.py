@@ -17,40 +17,37 @@ def actions(excel, sheet, path, values, data, driver):
     """
     # 断言可能不会只有一种，只要有assert关键字就是一个断言函数
     if str(branch(values[1])).startswith('assert'):
-        # 将断言结果回填到Excel表中
+        # 将断言结果回填到Excel表中,由于位置形参传递不够，在此添加一个text参数
         assertResult = getattr(driver, branch(values[1]))(**data)
         if assertResult:
-            pass_(sheet.cell, values[0] + 1, 8)
+            pass_(cell=sheet.cell, row=values[0] + 1, column=8)
         else:
-            failed_(sheet.cell, values[0] + 1, 8)
-        excel.save(path)
+            failed_(cell=sheet.cell, row=values[0] + 1, column=8)
 
     # 只要有acquire关键字就是获取一些数据值的函数
     elif str(branch(values[1])).startswith('acquire'):
         # 将获取到的数据回填到Excel表中
         acquireValue = getattr(driver, branch(values[1]))(**data)
         if acquireValue:
-            value_(sheet.cell, values[0] + 1, 8, acquireValue)
-        excel.save(path)
+            value_(cell=sheet.cell, row=values[0] + 1, column=8, value=acquireValue)
 
     # 只要有screenshot关键字的就是截图函数
     elif str(branch(values[1])).startswith('screenshot'):
-        getattr(driver, branch(values[1]))(**data)
+        save_path = getattr(driver, branch(values[1]))(**data)
         # 将截图存放路径处理成超链接插入到Excel表中
-        hyperlink_(sheet.cell, values[0] + 1, 8, values[4], 'FFFF00')
-        excel.save(path)
+        hyperlink_(cell=sheet.cell, row=values[0] + 1, column=8, path=save_path, fgColor='FFFF00')
 
     # 可以被工厂类返回的函数
     elif branch(values[1]):
         getattr(driver, branch(values[1]))(**data)
-        pass_(sheet.cell, values[0] + 1, 8)
-        excel.save(path)
+        pass_(cell=sheet.cell, row=values[0] + 1, column=8)
 
     # 其他函数
     else:
         getattr(driver, values[1])(**data)
-        pass_(sheet.cell, values[0] + 1, 8)
-        excel.save(path)
+        pass_(cell=sheet.cell, row=values[0] + 1, column=8)
+
+    excel.save(path)
 
 
 def action_failed(excel, sheet, path, values, sheetName, driver):
@@ -63,13 +60,14 @@ def action_failed(excel, sheet, path, values, sheetName, driver):
     :param sheetName:当前加载数据的Sheet名称
     :return:         作用于sheet对象后保存
     """
-
     end_index = [i.value for i in sheet[sheet.max_row]][0]
     for i in range(int(values[0]) + 1, int(end_index) + 2):
-        failed_(sheet.cell, i, 8)
+        failed_(cell=sheet.cell, row=i, column=8)
 
-    errStepPic = f"./picture/{sheetName}_{values[0]}_{str(int(time.time()))}.png"
-    driver.screenshot_save(errStepPic)
+    # 以Sheet页名称+用力步骤编号+时间戳命名错误截图
+    errorImgName = f"{sheetName}_{values[0]}_{str(int(time.time()))}"
+    errorImgPath = driver.screenshot_save(errorImgName, False)
 
-    hyperlink_(sheet.cell, values[0] + 1, 8, errStepPic, 'FF0000')
+    hyperlink_(cell=sheet.cell, row=values[0] + 1, column=8, path=errorImgPath, fgColor='FF0000')
+
     excel.save(path)

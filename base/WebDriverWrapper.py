@@ -7,7 +7,7 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 
 from common.BranchFactory import *
-from common.LogWrapper import *
+from common.PictureDispose import *
 
 
 # 缓存装饰器动态添加类属性（selnium webdriver类无限实例化控制成单浏览器）
@@ -55,27 +55,8 @@ class BrowserWrapper():
         :return: 浏览器对象
         """
         driver = branch(self.browser_name)
-        log.info('启动浏览器 --> 成功')
+        log.info(f'webdriver对象：启动浏览器[{self.browser_name}] --> 成功!')
 
-        # if name in ['chrome', '谷歌', 1]:
-        #     driver = webdriver.Chrome(options=ChromeOptions().conf_options())
-        #     log.info('启动浏览器 --> Chrome')
-        #
-        # elif name in ['firefox', '火狐', 2]:
-        #     driver = webdriver.Firefox()
-        #     log.info('启动浏览器 --> Firefox')
-        #
-        # elif name in ["ie", 3]:
-        #     driver = webdriver.Ie()
-        #     log.info('启动浏览器 --> IE')
-        #
-        # elif name in ["edge", 4]:
-        #     driver = webdriver.Edge()
-        #     log.info('启动浏览器 --> Edge')
-        #
-        # else:
-        #     print("\033[31m未找到您的浏览器配置，请使用其他浏览器...\033[0m'")
-        #     log.info('启动浏览器 --> 失败')
         return driver
 
     def __getattr__(self, item):
@@ -85,7 +66,6 @@ class BrowserWrapper():
         :param item: 属性名
         :return: 调用item属性
         """
-        # print('item',item)
         # log.info('功能调用 --> 映射 --> ' + item)
 
         return getattr(self.browser_driver, item)
@@ -114,7 +94,6 @@ class BrowserWrapper():
         """
         hide_wait = WebDriverWait(driver=self.driver, timeout=timeout, poll_frequency=frequency)
         hide_wait.until(EC.visibility_of_element_located((name, value)))
-        # hide_wait.until(EC.visibility_of_element_located(self.driver.find_element(name, value)))
 
     def implicit_wait(self, text):
         """
@@ -139,6 +118,7 @@ class BrowserWrapper():
         try:
             self.driver.execute_script(text, *args)
         except JavascriptException as e:
+            log.error(f'webdriver对象：无法执行[{text}]script脚本!')
             pass
 
     def slide_scroll_to_bottom(self):
@@ -192,12 +172,12 @@ class BrowserWrapper():
         """使当前webdriver对象刷新url"""
         self.driver.refresh()
 
-    def close_current_label(self):
+    def browser_label_close(self):
         """关闭当前webdriver对象所在标签页"""
         log.info(f'webdriver对象：关闭当前浏览器标签页!')
         self.driver.close()
 
-    def close_browser(self):
+    def browser_quit(self):
         """关闭浏览器"""
         log.info(f'webdriver对象：退出浏览器并销毁[webdriver]对象!')
         self.driver.quit()
@@ -267,14 +247,24 @@ class BrowserWrapper():
         self.locator_element(name, value).click()
         log.info(f'webdriver对象：以[{name}]方式定位[{value}]元素并点击!')
 
-    def screenshot_save(self, text):
+    def screenshot_save(self, text, path=True):
         """
         截图保存到指定目录下
-        :param text:截图文件的路径
-        :return: 作用于本地
+        :param text: 截图名称
+        :param path: 默认为True存放proce_pic目录，False存放error_pic目录
+        :return: 作用于本地目录
         """
-        log.info(f'webdriver对象：截图成功，存放路径：[{text}]!')
-        return self.driver.get_screenshot_as_file(text)
+        return Screenshot_(self.driver, text, path)
+
+    def screenshot_draw(self, name, value, text):
+        """
+        这是一个特殊的方法，使用起来会比较困难，针对父元素截图并针对该元素中的子元素进行矩形标记
+        :param name: 父元素，复数参数，定位元素的方法和路径，如xpath,//*[@id="1"]
+        :param value: 子元素，复数参数，需要矩形标记的子元素定位方法和路径，需要标记几个元素就填写几个元素定位参数
+        :param text: 处理后的图片保存路径
+        :return: 作用于截图
+        """
+        return Pictureit(self, name, value, text)
 
     # -------------------------------------------------- #
     # -------------------------------------------------- #
@@ -308,21 +298,11 @@ class BrowserWrapper():
         return self.locator_element(name, value).get_attribute(text)
 
     def acquire_element_text(self, name, value):
-        """
-        获取元素的文本（一个元素）
-        :param name: 定位元素方法
-        :param value: 定位元素路径
-        :return: 作用于元素对象
-        """
+        """获取元素的文本（一个元素）"""
         return self.locator_element(name, value).text
 
     def acquire_elements_text(self, name, value):
-        """
-        获取元素的文本（多个元素）
-        :param name: 定位元素方法
-        :param value: 定位元素路径
-        :return: 作用于元素对象
-        """
+        """获取元素的文本（多个元素）"""
         all_text = self.locator_element(name, value)
         text_list = []
         for one_text in all_text:
@@ -349,6 +329,12 @@ class BrowserWrapper():
         except Exception:
             log.error(traceback.format_exc())
             return False
+
+    def assert_text_reverse(self, name, value, expect):
+        """文本断言取反"""
+        status = self.assert_text(name, value, expect)
+        if status:
+            return not status
 
     def assert_attr(self, name, value, text, expect):
         """
@@ -378,7 +364,6 @@ class BrowserWrapper():
             WebDriverWait(driver=self.driver, timeout=10).until(EC.alert_is_present())
             if name in ['alert', 'confirm']:
                 alert = self.driver.switch_to.alert
-                self.sleep_wait(1)
                 alert_text = alert.text
                 alert.accept()
                 assert expect == alert_text or expect in alert_text, '断言失败'
@@ -386,6 +371,12 @@ class BrowserWrapper():
         except Exception:
             log.error(traceback.format_exc())
             return False
+
+    def assert_alert_reverse(self, name, expect):
+        """弹出框断言取反"""
+        status = self.assert_alert(name, expect)
+        if status:
+            return not status
 
     # -------------------------------------------------- #
     # -------------------------------------------------- #
@@ -415,11 +406,11 @@ class BrowserWrapper():
         """切换到指定窗口"""
         self.driver.switch_to.window(text)
 
-    def return_parent_frame(self):
+    def switch_to_parent_frame(self):
         """返回上一层frame框架"""
         self.driver.switch_to.parent_frame()
 
-    def return_default_content(self):
+    def switch_to_default_content(self):
         """返回默认frame框架"""
         self.driver.switch_to.default_content()
 
@@ -450,18 +441,6 @@ class BrowserWrapper():
         else:
             log.info(f'webdriver对象：以[{name}]方式定位[{value}]元素下拉选择{text}失败!')
 
-    # # 以index选择下拉框中的备选项
-    # def select_to_index(self, name, value, text):
-    #     return self.switch_to_select(self.locator_element(name, value)).select_by_index(text)
-    #
-    # # 以text选择下拉框中的备选项
-    # def select_to_text(self, name, value, text):
-    #     return self.switch_to_select(self.locator_element(name, value)).select_by_visible_text(text)
-    #
-    # # 以value选择下拉框中的备选项
-    # def select_to_value(self, name, value, text):
-    #     return self.switch_to_select(self.locator_element(name, value)).select_by_value(text)
-
     def select_choice_quit(self, name, value, text, expect):
         """
         取消下拉框选择
@@ -480,24 +459,12 @@ class BrowserWrapper():
         else:
             log.info(f'webdriver对象：以[{name}]方式定位[{value}]元素下拉选择取消{text}失败!')
 
-    # # 以index取消选择下拉框中的备选项
-    # def deselect_to_index(self, name, value, text):
-    #     return self.switch_to_select(self.locator_element(name, value)).deselect_by_value(text)
-    #
-    # # 以text取消选择下拉框中的备选项
-    # def deselect_to_text(self, name, value, text):
-    #     return self.switch_to_select(self.locator_element(name, value)).deselect_by_value(text)
-    #
-    # # 以value取消选择下拉框中的备选项
-    # def deselect_to_value(self, name, value, text):
-    #     return self.switch_to_select(self.locator_element(name, value)).deselect_by_value(text)
-
     # 取消所有选择下拉框的备选项
     def select_choice_quit_all(self, name, value):
         return self.switch_to_select(self.locator_element(name, value)).deselect_all()
 
-    # 获取下拉列表框所有备选项
     def select_all_options(self, select_object):
+        """获取下拉列表框所有备选项"""
         all_options = []
         if isinstance(select_object, Select):
             for item in select_object.options:
@@ -507,8 +474,8 @@ class BrowserWrapper():
                 all_options.append(item.text)
         return all_options
 
-    # 获取下拉列表框最终选择项
     def select_final_choice(self, select_object):
+        """获取下拉列表框最终选择项"""
         selected_options = []
         if isinstance(select_object, Select):
             for item in select_object.all_selected_options:
@@ -518,8 +485,8 @@ class BrowserWrapper():
                 selected_options.append(item.text)
         return selected_options
 
-    # 判断下拉列表框是否可以多选
     def select_is_multiple(self, select_object):
+        """判断下拉列表框是否可以多选"""
         mark = False
         if isinstance(select_object, Select):
             mark = True if select_object.is_multiple else False
@@ -530,17 +497,23 @@ class BrowserWrapper():
     # ------------ActionChains鼠标键盘相关---------------- #
     # -------------------------------------------------- #
     # -------------------------------------------------- #
-    # 鼠标悬停某元素
-    def hover_element(self, name, value):
+    def mouse_hover(self, name, value):
+        """鼠标悬停某元素"""
         return ActionChains(self.driver).move_to_element(self.locator_element(name, value)).perform()
 
-    # 双击某元素
-    def double_click(self, name, value):
+    def mouse_double_click(self, name, value):
+        """双击某元素"""
         return ActionChains(self.driver).double_click(self.locator_element(name, value)).perform()
 
-    # 右击某元素
-    def right_click(self, name, value):
+    def mouse_right_click(self, name, value):
+        """右击某元素"""
         return ActionChains(self.driver).context_click(self.locator_element(name, value)).perform()
+
+    def mouse_drag(self, name, value):
+        """将某元素拖拽到某元素"""
+        start = driver.locator_element(*(str(name).split(',')))
+        end = driver.locator_element(*(str(value).split(',')))
+        return ActionChains(self.driver).drag_and_drop(start, end).perform()
 
     # -------------------------------------------------- #
     # -------------------------------------------------- #
@@ -609,7 +582,8 @@ class BrowserWrapper():
 
     def close_alert(self, name='alert', value=None):
         """
-        关闭弹出框
+        关闭弹出框：如果是alert、confirm警告弹出框就直接点击确认，
+        如果是prompt交互弹出框则判断是否需要填值，如果无值可填便取消；
         :param name:弹出框的类型，默认alert
         :param value: prompt弹出框是否需要输入文本
         :return: 作用于各类弹出框
@@ -646,9 +620,11 @@ class BrowserWrapper():
 
 
 if __name__ == '__main__':
-    driver_wrapper = BrowserWrapper()
-    driver_wrapper.get('https://www.baidu.com')
-    print(driver_wrapper.title)
-    # driver_wrapper.input_element('id', 'kw', 'shhhh')
-    driver_wrapper.find_element('id', 'kw', ).send_keys('ssssssssss')
-    driver_wrapper.get_screenshot_as_file('./testin.png')
+    driver = BrowserWrapper()
+
+    driver.browser_visit(r'http://www.baidu.com/')
+    driver.input_element('id', 'kw', 'hhhhh')
+    driver.click_element('id', 'su')
+    driver.sleep_wait(2)
+    driver.screenshot_save('test_1.png', False)
+    driver.screenshot_save('test_22222.png')

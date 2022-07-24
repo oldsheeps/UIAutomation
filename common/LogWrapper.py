@@ -1,17 +1,20 @@
+import datetime
 import logging
 import os
 import traceback  # 回溯模块
-import datetime
+
 
 # 通过装饰器完成单例模式
 def singleton(cls):
     # 使用字典存储类对象
     instances = {}
+
     def _singleton(*args, **kwargs):
         if cls not in instances:
             # 如果类没有被创建过，那就new个新对象并存储到字典中
             instances[cls] = cls(*args, **kwargs)
         return instances[cls]
+
     return _singleton
 
 
@@ -23,7 +26,6 @@ class Log():
         # 设置日志信息等级
         self.log.setLevel(level='INFO')
 
-
     def console_handle(self):
         '''创建控制台处理器'''
         self.console_handler = logging.StreamHandler()
@@ -31,7 +33,6 @@ class Log():
         self.console_handler.setFormatter(self.get_formatter()[0])
         # 返回作用给日志器使用
         return self.console_handler
-
 
     def file_handle(self):
         '''创建文件处理器'''
@@ -71,7 +72,6 @@ class Log():
 
 
 log = Log().get_log()
-
 
 if __name__ == '__main__':
     log = Log().get_log()
