@@ -4,6 +4,7 @@ from common.BranchFactory import *
 from common.ExcelConf import *
 
 
+
 def actions(excel, sheet, path, values, data, driver):
     """
     根据不同的测试行为执行对应关键字并作出相应的回填
@@ -17,12 +18,13 @@ def actions(excel, sheet, path, values, data, driver):
     """
     # 断言可能不会只有一种，只要有assert关键字就是一个断言函数
     if str(branch(values[1])).startswith('assert'):
-        # 将断言结果回填到Excel表中,由于位置形参传递不够，在此添加一个text参数
+        # 将断言结果回填到Excel表中
         assertResult = getattr(driver, branch(values[1]))(**data)
         if assertResult:
             pass_(cell=sheet.cell, row=values[0] + 1, column=8)
         else:
             failed_(cell=sheet.cell, row=values[0] + 1, column=8)
+
 
     # 只要有acquire关键字就是获取一些数据值的函数
     elif str(branch(values[1])).startswith('acquire'):
@@ -42,7 +44,7 @@ def actions(excel, sheet, path, values, data, driver):
         getattr(driver, branch(values[1]))(**data)
         pass_(cell=sheet.cell, row=values[0] + 1, column=8)
 
-    # 其他函数
+    # 其他非自定义函数
     else:
         getattr(driver, values[1])(**data)
         pass_(cell=sheet.cell, row=values[0] + 1, column=8)

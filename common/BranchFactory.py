@@ -1,6 +1,6 @@
 import functools
 
-from base.OptionsWrapper import *
+from base.ChromeOptions import *
 
 
 def value_dispatch(func):
@@ -58,16 +58,21 @@ def branch(some):
     return None
 
 
+@branch.register('open_browser')
 @branch.register('创建浏览器对象')
 def branch_to(some):
     return "open_browser"
 
 
+@branch.register('sleep')
+@branch.register('sleep_wait')
 @branch.register('等待')
 def branch_to(some):
     return "sleep_wait"
 
 
+@branch.register('get')
+@branch.register('open')
 @branch.register('访问')
 def branch_to(some):
     return "browser_visit"
@@ -83,16 +88,19 @@ def branch_to(some):
     return "browser_back"
 
 
+@branch.register('F5')
 @branch.register('刷新')
 def branch_to(some):
     return "browser_refresh"
 
 
+@branch.register('close')
 @branch.register('关闭标签页')
 def branch_to(some):
     return "browser_label_close"
 
 
+@branch.register('quit')
 @branch.register('关闭浏览器')
 def branch_to(some):
     return "browser_quit"
@@ -103,36 +111,45 @@ def branch_to(some):
     return "locator_element"
 
 
+@branch.register('input')
 @branch.register('输入')
 def branch_to(some):
     return "input_element"
 
 
+@branch.register('clear')
 @branch.register('清空')
 def branch_to(some):
     return "clear_element"
 
 
+@branch.register('click')
 @branch.register('点击')
 def branch_to(some):
     return "click_element"
 
 
+@branch.register('screenshot')
 @branch.register('截图')
 def branch_to(some):
     return "screenshot_save"
 
 
+@branch.register('screenshot_draw')
 @branch.register('矩形标记')
 def branch_to(some):
     return "screenshot_draw"
 
 
+@branch.register('title')
+@branch.register('acquire_title')
 @branch.register('获取标题')
 def branch_to(some):
     return "acquire_title"
 
 
+@branch.register('current_url')
+@branch.register('acquire_url')
 @branch.register('获取URL')
 def branch_to(some):
     return "acquire_url"
@@ -185,7 +202,7 @@ def branch_to(some):
 
 @branch.register('进入窗口')
 def branch_to(some):
-    return "switch_to_window"
+    return "switch_to_assign_window"
 
 
 @branch.register('返回上层框架')
@@ -199,6 +216,7 @@ def branch_to(some):
 
 
 # 下拉框
+@branch.register('select_choice')
 @branch.register('下拉选择')
 def branch_to(some):
     return "select_choice"
@@ -242,6 +260,21 @@ def branch_to(some):
 @branch.register('鼠标拖拽')
 def branch_to(some):
     return "mouse_drag"
+
+
+@branch.register('复制')
+@branch.register('粘贴')
+@branch.register('剪切')
+def branch_to(some):
+    return "keys_copy_paste"
+
+
+@branch.register('光标')
+@branch.register('方向')
+@branch.register('键盘')
+@branch.register('键盘输入')
+def branch_to(some):
+    return "keys_input"
 
 
 @branch.register('新建标签页')

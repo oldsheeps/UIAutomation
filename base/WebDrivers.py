@@ -1,74 +1,19 @@
 import time
-
+import pyautogui
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, JavascriptException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
-
+from selenium.webdriver.common.keys import Keys
 from common.BranchFactory import *
 from common.PictureDispose import *
 
 
-# 缓存装饰器动态添加类属性（selnium webdriver类无限实例化控制成单浏览器）
-class cached_class_property(object):
-    def __init__(self, func):
-        """
-        默认构造函数
-        :param func: 调用当前类的实例对象
-        """
-        self.func = func
+class Drivers(object):
 
-    def __get__(self, obj, cls):
-        """
-        当一个类的类属性等于了另一个类实例的时候，
-        且这个类实现了__get__(),__set__(),__delete__()三个其中一个，
-        如果通过类属性访问，就会触发__get__()方法。
-        :param obj: cls类的实例对象
-        :param cls: 触发当前构造函数的类 <class '__main__.XXX'>
-        :return: 触发当前构造函数的实例返回。
-        如果没有return会抛出错误：AttributeError: 'NoneType' object has no attribute 'XX'
-        """
-        if obj is None:
-            return self
-        value = self.func(obj)
-        setattr(cls, self.func.__name__, value)
-        return value
-
-
-class BrowserWrapper():
-    """
-    基于Selenium Web自动化工具进行二次封装的一个支持无限实例化webdriver类，
-    但仍然可以保持使用同一个浏览器对象、支持使用自定义的方法、但同时又支持所有此类没有定义的方法。
-    """
-
-    def __init__(self, browser_name=None):
-        """
-        :param driver_name: 浏览器名字、数字或者字母
-        """
-        self.browser_name = '谷歌' if browser_name == None else browser_name
-
-    @cached_class_property
-    def driver(self):
-        """
-        将缓存装饰器注入进来，确保唯一实例时利用branch工厂创建对应的浏览器对象
-        :return: 浏览器对象
-        """
-        driver = branch(self.browser_name)
-        log.info(f'webdriver对象：启动浏览器[{self.browser_name}] --> 成功!')
-
-        return driver
-
-    def __getattr__(self, item):
-        """
-        想把其他的webdriver的操作方法直接添加进来，不再一个一个方法的写，然后调用driver属性的方法，不想一直搞冗余的代码。
-        python先使用__getattribute__，查不到才会调用__getsttr__方法，利用这个特性，来实现将原生driver的属性到该类里面。
-        :param item: 属性名
-        :return: 调用item属性
-        """
-        # log.info('功能调用 --> 映射 --> ' + item)
-
-        return getattr(self.browser_driver, item)
+    def __init__(self, driver):
+        self.driver = driver
 
     # -------------------------------------------------- #
     # -------------------------------------------------- #
@@ -333,8 +278,7 @@ class BrowserWrapper():
     def assert_text_reverse(self, name, value, expect):
         """文本断言取反"""
         status = self.assert_text(name, value, expect)
-        if status:
-            return not status
+        return False if status else True
 
     def assert_attr(self, name, value, text, expect):
         """
@@ -375,15 +319,14 @@ class BrowserWrapper():
     def assert_alert_reverse(self, name, expect):
         """弹出框断言取反"""
         status = self.assert_alert(name, expect)
-        if status:
-            return not status
+        return False if status else True
 
     # -------------------------------------------------- #
     # -------------------------------------------------- #
     # -----------------窗口和Frame切换-------------------- #
     # -------------------------------------------------- #
     # -------------------------------------------------- #
-    def switch_to_frame(self, text=None, name=None, value=None):
+    def switch_to_frame(self, name=None, value=None, text=None):
         """
         指定id或name属性或使用元素定位切入框架
         :param text:指定Frame的id或name
@@ -396,11 +339,17 @@ class BrowserWrapper():
             WebDriverWait(self.driver, timeout=10).until(EC.frame_to_be_available_and_switch_to_it(element))
             log.info(f'webdriver对象：切入[{element}]Frame框架成功!')
         elif text:
+            # elif name:
             # 判断frame是否可切入，如果可切入就执行切入
             WebDriverWait(self.driver, timeout=10).until(EC.frame_to_be_available_and_switch_to_it(text))
             log.info(f'webdriver对象：切入[{text}]Frame框架成功!')
         else:
             log.info(f'webdriver对象：切入Frame框架失败，必须给定参数!')
+
+    def switch_to_assign_window(self, text):
+        """切换到指定窗口"""
+        handles = self.acquire_all_handles()
+        self.driver.switch_to.window(handles[-int(text)])
 
     def switch_to_window(self, text):
         """切换到指定窗口"""
@@ -511,9 +460,38 @@ class BrowserWrapper():
 
     def mouse_drag(self, name, value):
         """将某元素拖拽到某元素"""
-        start = driver.locator_element(*(str(name).split(',')))
-        end = driver.locator_element(*(str(value).split(',')))
-        return ActionChains(self.driver).drag_and_drop(start, end).perform()
+        start = self.locator_element(*(str(name).split(',')))
+        # 让鼠标移动到起点元素上
+        pyautogui.moveTo(start.location['x']+10, start.location['y']+80)
+        # 定位要拖拽到的位置元素
+        end = self.locator_element(*(str(value).split(',')))
+        # 实现拖拽功能
+        pyautogui.dragTo(end.location['x']+10, end.location['y']+80, duration=1)
+
+
+    def keys_copy_paste(self,name,value,text='c'):
+        """全选后复制/粘贴"""
+        if str(text).lower() == 'c':
+            self.locator_element(name,value).send_keys(Keys.CONTROL, 'a')
+            self.locator_element(name,value).send_keys(Keys.CONTROL, 'c')
+        elif str(text).lower() == 'v':
+            self.locator_element(name, value).send_keys(Keys.CONTROL,'v')
+        elif str(text).lower() == 'x':
+            self.locator_element(name, value).send_keys(Keys.CONTROL,'x')
+
+
+    def keys_input(self,name,value,text,expect=None):
+        """键盘输入"""
+        dict = {
+            '上':Keys.UP,'下': Keys.DOWN,'左': Keys.LEFT,'右': Keys.RIGHT,
+            '行首': Keys.HOME,'行尾':Keys.END,
+            '退格': Keys.BACK_SPACE,'回车': Keys.ENTER,'上档':Keys.SHIFT,
+            '上翻': Keys.PAGE_UP,'下翻': Keys.PAGE_DOWN,
+        }
+        if expect:
+            self.locator_element(name,value).send_keys(dict.get(text)*expect)
+        else:
+            self.locator_element(name,value).send_keys(dict.get(text))
 
     # -------------------------------------------------- #
     # -------------------------------------------------- #
@@ -617,14 +595,3 @@ class BrowserWrapper():
         WebDriverWait(self.driver, timeout=10, ).until(EC.new_window_is_opened(old_handles))
         new_handles = self.acquire_all_handles()  # 再次获取所有窗口的句柄
         self.switch_to_window(new_handles[-1])
-
-
-if __name__ == '__main__':
-    driver = BrowserWrapper()
-
-    driver.browser_visit(r'http://www.baidu.com/')
-    driver.input_element('id', 'kw', 'hhhhh')
-    driver.click_element('id', 'su')
-    driver.sleep_wait(2)
-    driver.screenshot_save('test_1.png', False)
-    driver.screenshot_save('test_22222.png')

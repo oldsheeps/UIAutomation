@@ -1,7 +1,7 @@
 import openpyxl
 from selenium.common.exceptions import UnexpectedAlertPresentException
 
-from base.WebDriverWrapper import BrowserWrapper
+from base.WebBrowser import Browser
 from biz.PageAction import *
 from common.LogWrapper import *
 
@@ -39,7 +39,7 @@ def excel_ruuner(path):
                             del data[key]
                     # 判断是否实例化浏览器对象
                     if values[1] == '创建浏览器对象':
-                        driver = BrowserWrapper(values[4])
+                        driver = Browser(values[4])
                         driver.implicit_wait(10)
                         pass_(sheet.cell, values[0] + 1, 8)
                     else:
