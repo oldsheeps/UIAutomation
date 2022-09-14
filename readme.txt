@@ -42,7 +42,18 @@ Framework Explain：
     7.考虑查错的便捷性：执行每一个测试用例文件、每一条测试用例、每一步骤都记录日志，异常情况也会回溯；
 
 
-
+   # 正则表达式方法
+  def regular_expression(self, pattern, string):
+        """
+        正则表达式。pattern:匹配的正则表达式 ; string:要匹配的字符串;
+        :param pattern: 匹配的正则表达式
+        :param string: 要匹配的字符串
+        :return: 成功返回True、错误返回False
+        """
+        if re.match(pattern, string) is not None:
+            return True
+        elif re.match(pattern, string) is None:
+            return False
 
 
 

@@ -1,8 +1,12 @@
-from base.WebDrivers import *
+from base.WebCommand import *
+from factory.BranchFactory import *
 
 
-# 缓存装饰器动态添加类属性（selnium webdriver类无限实例化控制成单浏览器）
 class cached_class_property(object):
+    """
+        自定义动态缓存注入装饰器，作用于selenium webdriver类无限实例化控制成单例
+    """
+
     def __init__(self, func):
         """
         默认构造函数
@@ -28,10 +32,11 @@ class cached_class_property(object):
         return value
 
 
-class Browser(Drivers):
+class Drivers(Command):
     """
-    基于Selenium Web自动化工具进行二次封装的一个支持无限实例化webdriver类，
-    但仍然可以保持使用同一个浏览器对象、支持使用自定义的方法、但同时又支持所有此类没有定义的方法。
+        基于Selenium Web自动化工具进行二次封装的自动化工具；
+        它支持无限实例化webdriver类，但仍可以保持统一浏览器对象；
+        它支持使用自定义的方法、它非继承但又支持所有基类定义的方法；
     """
 
     def __init__(self, browser_name=None):
@@ -47,10 +52,9 @@ class Browser(Drivers):
         """
         将缓存装饰器注入进来，确保唯一实例时利用branch工厂创建对应的浏览器对象;
         注意：方法名称必须使用driver，其用意为了后续使用getattr能够直接映射到webdriver类
-        :return: 浏览器对象
+        :return: selenium webdriver对象
         """
-        log.info(f'webdriver对象：启动浏览器[{self.browser_name}] --> 成功!')
-
+        log.info(f'webdriver：启动浏览器[{self.browser_name}] --> 成功!')
         return branch(self.browser_name)
 
     def __getattr__(self, item):
@@ -61,18 +65,17 @@ class Browser(Drivers):
         :param item: 即将被调用的方法名
         :return: 利用getattr带入webdriver的实例对象访问某方法
         """
-        log.info('webdriver对象: --> 映射 --> ' + item)
+        log.info('webdriver: --> 映射 --> ' + item)
 
         return getattr(self.driver, item)
 
 
 if __name__ == '__main__':
-    driver = Browser()
-
+    driver = Drivers()
     driver.get(r'http://www.baidu.com/')
-    driver.input_element('id', 'kw', 'hhhhh')
-    click = driver.find_element('id', 'su')
-    click.click()
-    driver.sleep_wait(2)
-    driver.screenshot_save('test_1.png', False)
-    driver.screenshot_save('test_22222.png')
+    # driver.input_element('id', 'kw', 'hhhhh')
+    # click = driver.find_element('id', 'su')
+    # click.click()
+    # driver.sleep_wait(2)
+    # driver.screenshot_save('test_1.png', False)
+    # driver.screenshot_save('test_22222.png')

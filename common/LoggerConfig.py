@@ -1,6 +1,7 @@
 import datetime
 import logging
 import os
+import time
 import traceback  # 回溯模块
 
 
@@ -18,7 +19,7 @@ def singleton(cls):
     return _singleton
 
 
-class Log():
+class Log(object):
 
     def __init__(self):
         '''创建日志器'''
@@ -84,5 +85,5 @@ if __name__ == '__main__':
         # 将错误信息写入日志文件
         log.error(traceback.format_exc())
         print('1')
-
-    print('hello world hhh')
+    time.sleep(3)
+    print('测试是否被中断')

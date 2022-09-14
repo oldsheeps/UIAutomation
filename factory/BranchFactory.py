@@ -58,21 +58,29 @@ def branch(some):
     return None
 
 
-@branch.register('open_browser')
-@branch.register('创建浏览器对象')
+@branch.register('启动浏览器')
 def branch_to(some):
     return "open_browser"
 
 
-@branch.register('sleep')
-@branch.register('sleep_wait')
+@branch.register('关闭标签页')
+def branch_to(some):
+    return "browser_label_close"
+
+
+@branch.register('关闭浏览器')
+def branch_to(some):
+    return "browser_quit"
+
+
 @branch.register('等待')
 def branch_to(some):
     return "sleep_wait"
 
+@branch.register('隐式等待')
+def branch_to(some):
+    return "implicit_wait"
 
-@branch.register('get')
-@branch.register('open')
 @branch.register('访问')
 def branch_to(some):
     return "browser_visit"
@@ -88,22 +96,9 @@ def branch_to(some):
     return "browser_back"
 
 
-@branch.register('F5')
 @branch.register('刷新')
 def branch_to(some):
     return "browser_refresh"
-
-
-@branch.register('close')
-@branch.register('关闭标签页')
-def branch_to(some):
-    return "browser_label_close"
-
-
-@branch.register('quit')
-@branch.register('关闭浏览器')
-def branch_to(some):
-    return "browser_quit"
 
 
 @branch.register('定位')
@@ -111,45 +106,43 @@ def branch_to(some):
     return "locator_element"
 
 
-@branch.register('input')
 @branch.register('输入')
 def branch_to(some):
     return "input_element"
 
 
-@branch.register('clear')
 @branch.register('清空')
 def branch_to(some):
     return "clear_element"
 
 
-@branch.register('click')
 @branch.register('点击')
 def branch_to(some):
     return "click_element"
 
 
-@branch.register('screenshot')
 @branch.register('截图')
 def branch_to(some):
-    return "screenshot_save"
+    return "acquire_screenshot_save"
 
 
-@branch.register('screenshot_draw')
 @branch.register('矩形标记')
 def branch_to(some):
-    return "screenshot_draw"
+    return "acquire_screenshot_draw"
 
 
-@branch.register('title')
-@branch.register('acquire_title')
+@branch.register('执行js')
+@branch.register('执行JS')
+def branch_to(some):
+    return "exec_script"
+
+
 @branch.register('获取标题')
 def branch_to(some):
     return "acquire_title"
 
 
-@branch.register('current_url')
-@branch.register('acquire_url')
+@branch.register('获取url')
 @branch.register('获取URL')
 def branch_to(some):
     return "acquire_url"
@@ -165,7 +158,7 @@ def branch_to(some):
     return "acquire_element_text"
 
 
-@branch.register('获取一组元素文本')
+@branch.register('获取多个元素文本')
 def branch_to(some):
     return "acquire_elements_text"
 
@@ -215,8 +208,6 @@ def branch_to(some):
     return "switch_to_default_content"
 
 
-# 下拉框
-@branch.register('select_choice')
 @branch.register('下拉选择')
 def branch_to(some):
     return "select_choice"
@@ -262,19 +253,14 @@ def branch_to(some):
     return "mouse_drag"
 
 
-@branch.register('复制')
-@branch.register('粘贴')
-@branch.register('剪切')
+@branch.register('文本编辑')
 def branch_to(some):
-    return "keys_copy_paste"
+    return "text_edit_options"
 
 
-@branch.register('光标')
-@branch.register('方向')
-@branch.register('键盘')
-@branch.register('键盘输入')
+@branch.register('键盘控制')
 def branch_to(some):
-    return "keys_input"
+    return "keyboard_control"
 
 
 @branch.register('新建标签页')
@@ -287,22 +273,50 @@ def branch_to(some):
     return "switch_to_new_window"
 
 
-@branch.register('关闭弹框')
-def branch_to(some):
-    return "close_alert"
-
-
 @branch.register('点击并跳转')
 def branch_to(some):
     return "click_and_jump"
 
 
-@branch.register('点击一组')
+@branch.register('关闭弹框')
+def branch_to(some):
+    return "close_alert"
+
+
+@branch.register('点击多个')
 def branch_to(some):
     return "foreach_element_click"
 
+@branch.register('变量声明')
+def branch_to(some):
+    return "variable_create"
+
+@branch.register('变量查询')
+def branch_to(some):
+    return "acquire_variable_name"
+
+@branch.register('变量处理')
+def branch_to(some):
+    return "acquire_variable_handle_result"
+
+@branch.register('如果')
+def branch_to(some):
+    return "if_branch"
+
+@branch.register('或者')
+def branch_to(some):
+    return "elif_branch"
+
+@branch.register('否则')
+def branch_to(some):
+    return "else_branch"
+
+@branch.register('循环')
+def branch_to(some):
+    return "foreach_branch"
 
 @branch.register(1)
+@branch.register('chrome')
 @branch.register('Chrome')
 @branch.register('谷歌')
 def branch_to(some):
@@ -310,6 +324,7 @@ def branch_to(some):
 
 
 @branch.register(2)
+@branch.register('Firefox')
 @branch.register('firefox')
 @branch.register('火狐')
 def branch_to(some):
@@ -318,12 +333,15 @@ def branch_to(some):
 
 @branch.register(3)
 @branch.register('ie')
+@branch.register('Ie')
+@branch.register('IE')
 def branch_to(some):
     return webdriver.Ie()
 
 
 @branch.register(4)
 @branch.register('Edge')
+@branch.register('edge')
 def branch_to(some):
     return webdriver.Edge()
 
